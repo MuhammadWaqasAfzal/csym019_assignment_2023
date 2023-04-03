@@ -749,7 +749,7 @@
                     "full_time": 1,
                     "full_time_with_placement": 2,
                     "full_time_foundation": null,
-                    "part_time": 2
+                    "part_time": "2"
                 },
                 "starting": ["February", "September"],
                 "location": "waterside",
