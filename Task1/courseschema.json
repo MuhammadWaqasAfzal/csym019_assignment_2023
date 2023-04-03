@@ -1,0 +1,188 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Courses Data",
+    "description": "Details of courses offered at University of Northampton",
+    "type": "object",
+    "properties": {
+        "courses": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "course_details": {
+                        "type": "object",
+                        "properties": {
+                            "level": {
+                                "type": "string"
+                            },
+                            "duration": {
+                                "type": "object",
+                                "properties": {
+                                    "full_time": {
+                                        "type": ["number", "null"]
+                                    },
+                                    "full_time_with_placement": { "type": ["number", "null"] },
+                                    "full_time_foundation": {
+                                        "type": ["number", "null"]
+                                    },
+                                    "part_time": {
+                                        "type": ["string", "null"]
+                                    }
+                                },
+                                "required": [
+                                    "full_time",
+                                    "full_time_with_placement",
+                                    "full_time_foundation",
+                                    "part_time"
+                                ]
+                            },
+                            "starting": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "location": {
+                                "type": "string"
+                            },
+                            "overview": {
+                                "type": "string"
+                            },
+                            "modules": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "category": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "credit_hours": {
+                                            "type": "number"
+                                        },
+                                        "code": {
+                                            "type": "string"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "pre-requisites": {
+                                            "type": ["string", "null"]
+                                        }
+                                    },
+                                    "required": [
+                                        "category",
+                                        "name",
+                                        "credit_hours",
+                                        "code",
+                                        "status",
+                                        "pre-requisites"
+                                    ]
+                                }
+                            }
+                        },
+                        "required": [
+                            "level",
+                            "duration",
+                            "starting",
+                            "location",
+                            "overview",
+                            "modules"
+                        ]
+                    },
+                    "entry_requirements": {
+                        "type": "object",
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "courses": {
+                                "type": "array",
+                                "items": {
+                                    "type": ["string", "null"]
+                                }
+                            },
+                            "english_language_requirements": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "description",
+                            "courses",
+                            "english_language_requirements"
+                        ]
+                    },
+                    "fees_and_funding": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "session": {
+                                    "type": "string"
+                                },
+                                "uk_full_time": {
+                                    "type": "number"
+                                },
+                                "uk_part_time": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "fees": {
+                                                "type": "number"
+                                            },
+                                            "credit_hours": {},
+                                            "per_credit_hour": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": ["fees", "credit_hours", "per_credit_hour"]
+                                    }
+                                },
+                                "uk_integrated_foundation_year": {
+                                    "type": "number"
+                                },
+                                "international_full_time": {
+                                    "type": "number"
+                                },
+                                "international_integrated_foundation_year": {
+                                    "type": "number"
+                                },
+                                "placement_fee": { "type": "number" },
+                                "additional_cost": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+                                "session",
+                                "uk_full_time",
+                                "uk_part_time",
+                                "uk_integrated_foundation_year",
+                                "international_full_time",
+                                "international_integrated_foundation_year",
+                                "placement_fee",
+                                "additional_cost"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "id",
+                    "title",
+                    "course_details",
+                    "entry_requirements",
+                    "fees_and_funding"
+                ]
+            }
+        }
+    },
+    "required": ["courses"]
+}
