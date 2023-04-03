@@ -1,0 +1,1218 @@
+{
+    "courses": [{
+            "id": 1,
+            "title": "Accounting and Finance MSc",
+            "course_details": {
+                "level": "Postgraduate",
+                "duration": {
+                    "full_time": 1,
+                    "full_time_with_placement": 2,
+                    "part_time": null
+                },
+                "starting": ["September,February"],
+                "location": "waterside",
+                "overview": "Our MSc Accounting and Finance course provides you with the essential",
+                "modules": [{
+                    "name": "Corporate Reporting",
+                    "credit_hours": 20,
+                    "code": "FINM008",
+                    "status": "Compulsory"
+                }]
+            },
+            "entry_requirements": {
+                "courses": null,
+                "description": "If you hold a recognised first or second class ",
+                "english_language_requirements": "Minimum standard – IELTS 6.5 (or equivalent) for study at postgraduate level."
+            },
+            "fees_and_funding": [{
+                    "session": "23/24",
+                    "uk_full_time": "8010 pounds",
+                    "international_full_time": "16500 pounds",
+                    "placement_fee": "1000 pounds",
+                    "additional_cost": 0
+                },
+                {
+                    "session": "22/23",
+                    "uk_full_time": "7650 pounds",
+                    "international_full_time": "15000 pounds",
+                    "placement_fee": "1000 pounds",
+                    "additional_cost": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Advanced Design and Manufacturing MSc",
+            "course_details": {
+                "level": "Postgraduate ",
+                "duration": {
+                    "full_time": 1,
+                    "full_time_with_placement": 2,
+                    "part_time": null
+                },
+                "starting": ["September,February"],
+                "location": "waterside",
+                "overview": "Our MSc Accounting and Finance course provides you with the essential",
+                "modules": {
+                    "placement": [{
+                            "name": "Mathematical Modelling",
+                            "credit_hours": 20,
+                            "code": "ENGM001",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Computer Aided Analysis and Visualisation of Mechanical Systems",
+                            "credit_hours": 20,
+                            "code": "ENGM004",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Professional Practice for Technologists",
+                            "credit_hours": 20,
+                            "code": "ENGM009",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Product Design",
+                            "credit_hours": 20,
+                            "code": "ENGM010",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Digital Manufacturing",
+                            "credit_hours": 20,
+                            "code": "ENGM011",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Sustainable Manufacture",
+                            "credit_hours": 20,
+                            "code": "ENGM072",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Placement",
+                            "credit_hours": 30,
+                            "code": "ENGM035",
+                            "status": "Compulsory",
+                            "pre-requisites": "CSYM036"
+                        },
+                        {
+                            "name": "Career Futures: Employability Skills",
+                            "credit_hours": 0,
+                            "code": "ENGM036",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Research Project",
+                            "credit_hours": 30,
+                            "code": "ENGM0357",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        }
+                    ],
+                    "non_placement": [{
+                            "name": "Mathematical Modelling",
+                            "credit_hours": 20,
+                            "code": "ENGM001",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Computer Aided Analysis and Visualisation of Mechanical Systems",
+                            "credit_hours": 20,
+                            "code": "ENGM004",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Professional Practice for Technologists",
+                            "credit_hours": 20,
+                            "code": "ENGM009",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Product Design",
+                            "credit_hours": 20,
+                            "code": "ENGM010",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Digital Manufacturing",
+                            "credit_hours": 20,
+                            "code": "ENGM011",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Sustainable Manufacture",
+                            "credit_hours": 20,
+                            "code": "ENGM072",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Individual Engineering Project",
+                            "credit_hours": 60,
+                            "code": "ENGM005",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        }
+                    ]
+                }
+            },
+            "entry_requirements": {
+                "courses": null,
+                "description": "If you hold a recognised first or second class ",
+                "english_language_requirements": "Minimum standard – IELTS 6.5 (or equivalent) for study at postgraduate level."
+            },
+            "fees_and_funding": [{
+                    "session": "23/24",
+                    "uk_full_time": 8010,
+                    "uk_part_time": [{
+                            "fees": 4450,
+                            "credit_hours": 100
+                        },
+                        {
+                            "fees": 3560,
+                            "credit_hours": 80
+                        }
+                    ],
+                    "international_full_time": 16500,
+                    "placement_fee": 1000,
+                    "additional_cost": 0
+                },
+                {
+                    "session": "22/23",
+                    "uk_full_time": 7650,
+                    "uk_part_time": [{
+                            "fees": 4250,
+                            "credit_hours": 100
+                        },
+                        {
+                            "fees": 3400,
+                            "credit_hours": 80
+                        }
+                    ],
+                    "international_full_time": 15000,
+                    "placement_fee": 1000,
+                    "additional_cost": 0
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Interior Architecture & Spatial Design BA",
+            "course_details": {
+                "level": "Undergradute ",
+                "duration": {
+                    "full_time": 3,
+                    "full_time_with_placement": null,
+                    "full_time_foundation": 4,
+                    "part_time": "5-6"
+                },
+                "starting": ["September"],
+                "location": "waterside",
+                "overview": "The Interior Architecture and Spatial Design (IASD) BA (Hons) course gives you the opportunity to be part of a challenging and rewarding experience, both in terms of your personal development and for your vocational aspirations.",
+                "modules": {
+                    "stage1": [{
+                            "name": "Design Project 1",
+                            "credit_hours": 40,
+                            "code": "3DD1005",
+                            "status": "Compulsory",
+                            "pre-requisites": null
+                        },
+                        {
+                            "name": "3D Computer Aided Design 1",
+                            "credit_hours": 20,
+                            "code": "3DD1021",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Design, Construction and Detailing 1",
+                            "credit_hours": 40,
+                            "code": "3DD1061",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Design Theory Context and Practice 1",
+                            "credit_hours": 20,
+                            "code": "3DD1062",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        }
+                    ],
+                    "stage2": [{
+                            "name": "Design Project 2",
+                            "credit_hours": 40,
+                            "code": "3DD2009",
+                            "status": "Compulsory",
+                            "pre-requisites": null
+                        },
+                        {
+                            "name": "3D Computer Aided Design 2",
+                            "credit_hours": 20,
+                            "code": "3DD2029",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Design, Construction and Detailing 2",
+                            "credit_hours": 40,
+                            "code": "3DD2070",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Design Theory Context and Practice 2",
+                            "credit_hours": 20,
+                            "code": "3DD2071",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        }
+                    ],
+                    "stage3": [{
+                            "name": "Minor Design Project ",
+                            "credit_hours": 40,
+                            "code": "3DD3022",
+                            "status": "Compulsory",
+                            "pre-requisites": null
+                        },
+                        {
+                            "name": "Final Major Project ",
+                            "credit_hours": 80,
+                            "code": "3DD3042",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Dissertation",
+                            "credit_hours": 20,
+                            "code": "3DD4006",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        }
+                    ]
+                }
+            },
+            "entry_requirements": {
+                "description": "Standard entry requirements apply for the interior architecture and spatial design BA",
+                "courses": [
+                    "BCC at A-Level or",
+                    "DMM at BTEC or,Pass (C and above) at T Level"
+                ],
+                "english_language_requirements": "IELTS 6.0 (or equivalent) with a minimum of 5.5 in all bands"
+            },
+            "fees_and_funding": [{
+                    "session": "23/24",
+                    "uk_full_time": 9250,
+                    "uk_part_time": [{
+                        "fees": 1540,
+                        "credit_hours": null,
+                        "per_credit_hour": 20
+                    }],
+                    "uk_integrated_foundation_year": 9250,
+                    "international_full_time": 14750,
+                    "international_integrated_foundation_year": 14750,
+                    "placement_fee": null,
+                    "additional_cost": 700
+                },
+                {
+                    "session": "22/23",
+                    "uk_full_time": 9250,
+                    "uk_part_time": [{
+                        "fees": 1500,
+                        "credit_hours": null,
+                        "per_credit_hour": 20
+                    }],
+                    "uk_integrated_foundation_year": 9250,
+                    "international_full_time": 14000,
+                    "international_integrated_foundation_year": 14000,
+                    "placement_fee": null,
+                    "additional_cost": 700
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "International Tourism & Hospitality Management (Top-Up) BA (Hons)",
+            "course_details": {
+                "level": "Undergradute ",
+                "duration": {
+                    "full_time": 1,
+                    "full_time_with_placement": null,
+                    "full_time_foundation": null,
+                    "part_time": "2"
+                },
+                "starting": ["September"],
+                "location": "waterside",
+                "overview": "This course is specifically designed to meet the needs of the international tourism industries, which are dynamic and fast paced.",
+                "modules": {
+                    "stage1": [{
+                            "name": "Professional Consultancy Project",
+                            "credit_hours": 20,
+                            "code": "LEI3002",
+                            "status": "Compulsory",
+                            "pre-requisites": null
+                        },
+                        {
+                            "name": "Innovation in Tourism and Hospitality Management",
+                            "credit_hours": 20,
+                            "code": "LEI3003",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "International Destination Management for Tourism and Hospitality",
+                            "credit_hours": 20,
+                            "code": "LEI3014",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Service Excellence Design",
+                            "credit_hours": 20,
+                            "code": "LEI3025",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Research Project",
+                            "credit_hours": 20,
+                            "code": "LEI4002",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        }
+                    ]
+                }
+            },
+            "entry_requirements": {
+                "description": "If you hold a HND/FdA Tourism Management or equivalent qualification then you will be eligible to apply for this course. We welcome international students that have an equivalent Diploma/degree and English Language equivalent grade 6 IELTS.",
+                "courses": null,
+                "english_language_requirements": "IELTS 6.0 (or equivalent) with a minimum of 5.5 in all bands for study at undergraduate level."
+            },
+            "fees_and_funding": [{
+                    "session": "23/24",
+                    "uk_full_time": 9250,
+                    "uk_part_time": [{
+                        "fees": 1540,
+                        "credit_hours": null,
+                        "per_credit_hour": 20
+                    }],
+                    "uk_integrated_foundation_year": null,
+                    "international_full_time": 15500,
+                    "international_integrated_foundation_year": null,
+                    "placement_fee": null,
+                    "additional_cost": null
+                },
+                {
+                    "session": "22/23",
+                    "uk_full_time": 9250,
+                    "uk_part_time": [{
+                        "fees": 1500,
+                        "credit_hours": null,
+                        "per_credit_hour": 20
+                    }],
+                    "uk_integrated_foundation_year": null,
+                    "international_full_time": 14500,
+                    "international_integrated_foundation_year": null,
+                    "placement_fee": null,
+                    "additional_cost": null
+                }
+            ],
+            "industry_patenership_gruop": "Canal & River Trust"
+        },
+        {
+            "id": 5,
+            "title": "International Hotel Management MA",
+            "course_details": {
+                "level": "Postgraduate ",
+                "duration": {
+                    "full_time": 1,
+                    "full_time_with_placement": null,
+                    "full_time_foundation": null,
+                    "part_time": null
+                },
+                "starting": ["September"],
+                "location": "waterside",
+                "overview": "Successful hotel managers are often inspiring. They demonstrate professionalism, operational knowledge, leadership skills, strategic thinking and people management capabilities.",
+                "modules": {
+                    "stage1": [{
+                            "name": "Strategic Destination Management",
+                            "credit_hours": 20,
+                            "code": "LEIM020",
+                            "status": "Compulsory",
+                            "pre-requisites": null
+                        },
+                        {
+                            "name": "Dissertation & Research Methods (Tourism, Hospitality, Hotel and Events Management)",
+                            "credit_hours": 20,
+                            "code": "LEIM031",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Service Excellence and Innovation",
+                            "credit_hours": 20,
+                            "code": "LEIM036",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "International Hotel Management",
+                            "credit_hours": 20,
+                            "code": "LEIM037",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Transforming Organisational Cultures in the International Hotel Industry",
+                            "credit_hours": 20,
+                            "code": "LEIM040",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Strategic Digital Marketing",
+                            "credit_hours": 20,
+                            "code": "MKTM027",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Managing Across Cultures",
+                            "credit_hours": 20,
+                            "code": "MKTM089",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        }
+                    ]
+                }
+            },
+            "entry_requirements": {
+                "description": "All International and EU students applying for a course with us must meet the following minimum English language requirements:",
+                "courses": null,
+                "english_language_requirements": "Minimum standard – IELTS 6.5 (or equivalent) for study at postgraduate level."
+            },
+            "fees_and_funding": [{
+                    "session": "23/24",
+                    "uk_full_time": 8010,
+                    "uk_part_time": null,
+                    "uk_integrated_foundation_year": null,
+                    "international_full_time": 16500,
+                    "international_integrated_foundation_year": null,
+                    "placement_fee": 1000,
+                    "additional_cost": null
+                },
+                {
+                    "session": "22/23",
+                    "uk_full_time": 7650,
+                    "uk_part_time": null,
+                    "uk_integrated_foundation_year": null,
+                    "international_full_time": 15000,
+                    "international_integrated_foundation_year": null,
+                    "placement_fee": 500,
+                    "additional_cost": null
+                }
+            ],
+            "industry_patenership_gruop": null
+        },
+        {
+            "id": 6,
+            "title": "Project Management MSc",
+            "course_details": {
+                "level": "Postgraduate ",
+                "duration": {
+                    "full_time": 1,
+                    "full_time_with_placement": 2,
+                    "full_time_foundation": null,
+                    "part_time": null
+                },
+                "starting": ["Janua ry", "June", "September"],
+                "location": "waterside",
+                "overview": "If you are already working within this discipline or are considering a Project Management career, then this course is ideal. Our Project Management course is designed to allow entry from any degree discipline and a diverse range of work backgrounds. The skills that you will gain through studying this course are transferable to a wide variety of industries – gas, engineering, information technology, healthcare, events, public sector and logistics.",
+                "modules": {
+                    "stage1": [{
+                            "name": "Fundamentals of Project Management",
+                            "credit_hours": 20,
+                            "code": " BSOM071",
+                            "status": "Compulsory",
+                            "pre-requisites": null
+                        },
+                        {
+                            "name": "Risk and Resilience in Holistic Value Chain Management ",
+                            "credit_hours": 20,
+                            "code": " BSOM072",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Finance and Procurement Management",
+                            "credit_hours": 20,
+                            "code": " BSOM073",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Critical Issues in Project Management ",
+                            "credit_hours": 20,
+                            "code": " BSOM074",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Business Research Project",
+                            "credit_hours": 60,
+                            "code": " BSOM077",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Managing Project Teams ",
+                            "credit_hours": 20,
+                            "code": "HRMM068",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Social Responsibility and Impact",
+                            "credit_hours": 20,
+                            "code": "STRM075",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        }
+                    ]
+                }
+            },
+            "entry_requirements": {
+                "description": "If English is not your first language, you must meet the following English language requirements:",
+                "courses": null,
+                "english_language_requirements": "IELTS 6.5 overall with a minimum of 6.0 in writing and 5.5 in all other skills.Equivalent qualifications are considered, for further information regarding English language requirements at the University, please see our English Language Requirements page."
+            },
+            "fees_and_funding": [{
+                    "session": "23/24",
+                    "uk_full_time": 8010,
+                    "uk_part_time": null,
+                    "uk_integrated_foundation_year": null,
+                    "international_full_time": 16500,
+                    "international_integrated_foundation_year": null,
+                    "placement_fee": 1000,
+                    "additional_cost": null
+                },
+                {
+                    "session": "22/23",
+                    "uk_full_time": 7650,
+                    "uk_part_time": null,
+                    "uk_integrated_foundation_year": null,
+                    "international_full_time": 15000,
+                    "international_integrated_foundation_year": null,
+                    "placement_fee": 500,
+                    "additional_cost": null
+                }
+            ],
+            "industry_patenership_gruop": null
+        },
+        {
+            "id": 7,
+            "title": "Certificate of Higher Education in Leather Technology",
+            "course_details": {
+                "level": "Undergradute ",
+                "duration": {
+                    "full_time": 1,
+                    "full_time_with_placement": null,
+                    "full_time_foundation": null,
+                    "part_time": "2"
+                },
+                "starting": ["September"],
+                "location": "waterside",
+                "overview": "The leather industry today is a global business with links from the farm to top brands such as Aston Martin, Virgin Atlantic, Clarks shoes, Nike and Burberry. With its current shortage of technically skilled staff, and increased demand on the leather industry itself, they are actively searching for well-trained graduates for a range of roles including research, quality control, supply chain traceability and other technical positions.This one year full-time Certificate of Higher Education in Leather Technology is the perfect introduction to help you go straight into the leather industry.",
+                "modules": {
+                    "stage1": [{
+                            "name": "Introduction to Management",
+                            "credit_hours": 20,
+                            "code": "BUS1004",
+                            "status": "Designate",
+                            "pre-requisites": null
+                        },
+                        {
+                            "name": "Raw Materials and End Use ",
+                            "credit_hours": 20,
+                            "code": "LEA1004",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Surface Coatings",
+                            "credit_hours": 20,
+                            "code": "LEA1011",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Leather Technology and Materials Evaluation - Raw to Tanned",
+                            "credit_hours": 30,
+                            "code": "LEA1013",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Leather Technology and Materials Evaluation - Tanned to Crust",
+                            "credit_hours": 30,
+                            "code": "LEA1014",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Introduction to Science ",
+                            "credit_hours": 10,
+                            "code": "LEA1015",
+                            "status": "Designate",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Leather Science",
+                            "credit_hours": 10,
+                            "code": "LEA1016",
+                            "status": "Designate",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Foundations of Marketing",
+                            "credit_hours": 20,
+                            "code": "MKT1001",
+                            "status": "Designate",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Introduction to Marketing Communications",
+                            "credit_hours": 20,
+                            "code": "MKT1002",
+                            "status": "Designate",
+                            "pre-requisites": ""
+                        }
+                    ]
+                }
+            },
+            "entry_requirements": {
+                "description": "If you hold a HND/FdA Tourism Management or equivalent qualification then you will be eligible to apply for this course. We welcome international students that have an equivalent Diploma/degree and English Language equivalent grade 6 IELTS.",
+                "courses": null,
+                "english_language_requirements": "IELTS 6.0 (or equivalent) with a minimum of 5.5 in all bands for study at undergraduate level."
+            },
+            "fees_and_funding": [{
+                    "session": "23/24",
+                    "uk_full_time": 9250,
+                    "uk_part_time": [{
+                        "fees": 1540,
+                        "credit_hours": null,
+                        "per_credit_hour": 20
+                    }],
+                    "uk_integrated_foundation_year": null,
+                    "international_full_time": 15500,
+                    "international_integrated_foundation_year": null,
+                    "placement_fee": null,
+                    "additional_cost": null
+                },
+                {
+                    "session": "22/23",
+                    "uk_full_time": 9250,
+                    "uk_part_time": [{
+                        "fees": 1500,
+                        "credit_hours": null,
+                        "per_credit_hour": 20
+                    }],
+                    "uk_integrated_foundation_year": null,
+                    "international_full_time": 14500,
+                    "international_integrated_foundation_year": null,
+                    "placement_fee": null,
+                    "additional_cost": null
+                }
+            ],
+            "industry_patenership_gruop": "Canal & River Trust"
+        },
+        {
+            "id": 8,
+            "title": "Computing MSc",
+            "course_details": {
+                "level": "Postgraduate ",
+                "duration": {
+                    "full_time": 1,
+                    "full_time_with_placement": 2,
+                    "full_time_foundation": null,
+                    "part_time": 2
+                },
+                "starting": ["February", "September"],
+                "location": "waterside",
+                "overview": "With the computing field evolving rapidly around the world, the need for good quality professionals and specialists is increasing. Our Masters in Computing course has been designed to build on your existing computing skills and take them to the next level. It has a significant programming component and is different from other IT programmes.",
+                "modules": {
+                    "non_placement": [{
+                            "name": "Intelligent Systems",
+                            "credit_hours": 20,
+                            "code": " CSYM015",
+                            "status": "Designated",
+                            "pre-requisites": null
+                        },
+                        {
+                            "name": "Distributed Systems",
+                            "credit_hours": 20,
+                            "code": " CSYM016",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Databases",
+                            "credit_hours": 20,
+                            "code": " CSYM017",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Media Techniques",
+                            "credit_hours": 20,
+                            "code": " CSYM018",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Internet Programming",
+                            "credit_hours": 60,
+                            "code": " CSYM019",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Internet Security",
+                            "credit_hours": 20,
+                            "code": "CSYM020",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Java programming",
+                            "credit_hours": 20,
+                            "code": "CSYM021",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Specification Analysis and Design",
+                            "credit_hours": 20,
+                            "code": "CSYM024",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Visual Object Software",
+                            "credit_hours": 20,
+                            "code": "CSYM025",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Software Engineering",
+                            "credit_hours": 20,
+                            "code": "CSYM026",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Formal Methods for Software Construction",
+                            "credit_hours": 20,
+                            "code": "CSYM027",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Modern Computer Architecture",
+                            "credit_hours": 20,
+                            "code": "CSYM028",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Computer Networks",
+                            "credit_hours": 20,
+                            "code": "CSYM029",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Mobile Device Software Development",
+                            "credit_hours": 20,
+                            "code": "CSYM030",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Immersive Technologies",
+                            "credit_hours": 20,
+                            "code": "CSYM031",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Modelling for Enterprise",
+                            "credit_hours": 20,
+                            "code": "CSYM032",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Dissertation",
+                            "credit_hours": 60,
+                            "code": "CSYM033",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        }
+                    ],
+                    "placement": [{
+                            "name": "Intelligent Systems",
+                            "credit_hours": 20,
+                            "code": " CSYM015",
+                            "status": "Designated",
+                            "pre-requisites": null
+                        },
+                        {
+                            "name": "Distributed Systems",
+                            "credit_hours": 20,
+                            "code": " CSYM016",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Databases",
+                            "credit_hours": 20,
+                            "code": " CSYM017",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Media Techniques",
+                            "credit_hours": 20,
+                            "code": " CSYM018",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Internet Programming",
+                            "credit_hours": 60,
+                            "code": " CSYM019",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Internet Security",
+                            "credit_hours": 20,
+                            "code": "CSYM020",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Specification Analysis and Design",
+                            "credit_hours": 20,
+                            "code": "CSYM024",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Visual Object Software",
+                            "credit_hours": 20,
+                            "code": "CSYM025",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Software Engineering",
+                            "credit_hours": 20,
+                            "code": "CSYM026",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Formal Methods for Software Construction",
+                            "credit_hours": 20,
+                            "code": "CSYM027",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Modern Computer Architecture",
+                            "credit_hours": 20,
+                            "code": "CSYM028",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Computer Networks",
+                            "credit_hours": 20,
+                            "code": "CSYM029",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Mobile Device Software Development",
+                            "credit_hours": 20,
+                            "code": "CSYM030",
+                            "status": "Designated",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Placement",
+                            "credit_hours": 30,
+                            "code": "CSYM035",
+                            "status": "Compulsory",
+                            "pre-requisites": "CSYM036"
+                        },
+                        {
+                            "name": "Career Futures: Employability Skills",
+                            "credit_hours": 0,
+                            "code": "CSYM036",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Research Project",
+                            "credit_hours": 30,
+                            "code": "CSYM037",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        }
+                    ]
+                }
+            },
+            "entry_requirements": {
+                "description": "All International and EU students applying for a course with us must meet the following minimum English language requirements:",
+                "courses": null,
+                "english_language_requirements": "Minimum standard – IELTS 6.5 (or equivalent)for study at postgraduate level."
+            },
+            "fees_and_funding": [{
+                    "session": "23/24",
+                    "uk_full_time": 8010,
+                    "uk_part_time": null,
+                    "uk_integrated_foundation_year": null,
+                    "international_full_time": 16500,
+                    "international_integrated_foundation_year": null,
+                    "placement_fee": 1000,
+                    "additional_cost": null
+                },
+                {
+                    "session": "22/23",
+                    "uk_full_time": 7650,
+                    "uk_part_time": null,
+                    "uk_integrated_foundation_year": null,
+                    "international_full_time": 15000,
+                    "international_integrated_foundation_year": null,
+                    "placement_fee": 500,
+                    "additional_cost": null
+                }
+            ],
+            "industry_patenership_gruop": null
+        },
+        {
+            "id": 9,
+            "title": "Working with Children, Young People and Families BA (Hons)",
+            "course_details": {
+                "level": "Undergradute ",
+                "duration": {
+                    "full_time": 3,
+                    "full_time_with_placement": null,
+                    "full_time_foundation": 4,
+                    "part_time": "4-6"
+                },
+                "starting": ["September"],
+                "location": "waterside",
+                "overview": "Develop your knowledge and understanding of the lives and experiences of children, young people and their families through academic study and work-based learning with our ‘Working with children, young people and families’ degree. Driven by values of inclusion, empowerment and social justice, this exciting degree supports your academic and professional development to enhance your skills and career prospects so that you can make a positive impact for children, young people and families. You will explore a range of topics and key issues, including poverty, mental health, youth offending, safeguarding and anti-discriminatory practice.",
+                "modules": {
+                    "stage1": [{
+                            "name": "Introduction to Management",
+                            "credit_hours": 20,
+                            "code": "BUS1004",
+                            "status": "Designate",
+                            "pre-requisites": null
+                        },
+                        {
+                            "name": "Raw Materials and End Use ",
+                            "credit_hours": 20,
+                            "code": "LEA1004",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Surface Coatings",
+                            "credit_hours": 20,
+                            "code": "LEA1011",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Leather Technology and Materials Evaluation - Raw to Tanned",
+                            "credit_hours": 30,
+                            "code": "LEA1013",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Leather Technology and Materials Evaluation - Tanned to Crust",
+                            "credit_hours": 30,
+                            "code": "LEA1014",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Introduction to Science ",
+                            "credit_hours": 10,
+                            "code": "LEA1015",
+                            "status": "Designate",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Leather Science",
+                            "credit_hours": 10,
+                            "code": "LEA1016",
+                            "status": "Designate",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Foundations of Marketing",
+                            "credit_hours": 20,
+                            "code": "MKT1001",
+                            "status": "Designate",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Introduction to Marketing Communications",
+                            "credit_hours": 20,
+                            "code": "MKT1002",
+                            "status": "Designate",
+                            "pre-requisites": ""
+                        }
+                    ]
+                }
+            },
+            "entry_requirements": {
+                "description": "In addition to general entry requirements, applicants are normally expected to hold English and Mathematics equivalent to a GCSE grade C/4.",
+                "courses": [
+                    "CCC at A Level or",
+                    "MMM at BTEC or",
+                    "Pass (C and above) at T Level."
+                ],
+                "english_language_requirements": "IELTS 6.0 (or equivalent) with a minimum of 5.5 in all bands for study at undergraduate level."
+            },
+            "fees_and_funding": [{
+                    "session": "23/24",
+                    "uk_full_time": 9250,
+                    "uk_part_time": [{
+                        "fees": 1540,
+                        "credit_hours": null,
+                        "per_credit_hour": 20
+                    }],
+                    "uk_integrated_foundation_year": 9250,
+                    "international_full_time": 14750,
+                    "international_integrated_foundation_year": 14750,
+                    "placement_fee": null,
+                    "additional_cost": null
+                },
+                {
+                    "session": "22/23",
+                    "uk_full_time": 9250,
+                    "uk_part_time": [{
+                        "fees": 1500,
+                        "credit_hours": null,
+                        "per_credit_hour": 20
+                    }],
+                    "uk_integrated_foundation_year": 9250,
+                    "international_full_time": 14000,
+                    "international_integrated_foundation_year": 14000,
+                    "placement_fee": null,
+                    "additional_cost": null
+                }
+            ],
+            "industry_patenership_gruop": "Canal & River Trust"
+        },
+        {
+            "id": 10,
+            "title": "Fine Art Painting and Drawing (Top-Up) BA (Hons)",
+            "course_details": {
+                "level": "Undergradute ",
+                "duration": {
+                    "full_time": 1,
+                    "full_time_with_placement": null,
+                    "full_time_foundation": 4,
+                    "part_time": null
+                },
+                "starting": ["September"],
+                "location": "waterside",
+                "overview": "Our Fine Art Painting and Drawing (Top-Up) BA (Hons) course offers you the chance to study and explore contemporary approaches to painting and drawing in a lively and intellectually challenging atmosphere providing a breadth and depth of experience which is not possible on a multi-disciplinary fine art course. This specialist Painting and Drawing degree offers the chance for students to focus on painting and drawing in equal measure or as single disciplines. You will also be introduced to printmaking which can be used both in combination with painting and drawing or as a single discipline. The structure of this Painting & Drawing course is designed to introduce students to a wide variety of new ideas, techniques and processes and to offer them a wide-ranging expansion of the possibilities of both painting and drawing.",
+                "modules": {
+                    "stage1": [{
+                            "name": "Critical Study (20 Credits)",
+                            "credit_hours": 20,
+                            "code": "ART3018",
+                            "status": "Designate",
+                            "pre-requisites": null
+                        },
+                        {
+                            "name": "Professional Practice and Employability  ",
+                            "credit_hours": 20,
+                            "code": "ART3019",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        },
+                        {
+                            "name": "Practice Exhibition (Fine Art Painting and Drawing) ",
+                            "credit_hours": 80,
+                            "code": "ART4014",
+                            "status": "Compulsory",
+                            "pre-requisites": ""
+                        }
+                    ]
+                }
+            },
+            "entry_requirements": {
+                "description": "Applicants are requested to send a digital portfolio of their own work in Art and Design and attend a 30-minute online interview with a member of the team.",
+                "courses": null,
+                "english_language_requirements": "IELTS 6.0 (or equivalent) with a minimum of 5.5 in all bands for study at undergraduate level."
+            },
+            "fees_and_funding": [{
+                    "session": "23/24",
+                    "uk_full_time": 9250,
+                    "uk_part_time": null,
+                    "uk_integrated_foundation_year": null,
+                    "international_full_time": 15500,
+                    "international_integrated_foundation_year": null,
+                    "placement_fee": null,
+                    "additional_cost": null
+                },
+                {
+                    "session": "22/23",
+                    "uk_full_time": 9250,
+                    "uk_part_time": [{
+                        "fees": 1500,
+                        "credit_hours": null,
+                        "per_credit_hour": 20
+                    }],
+                    "uk_integrated_foundation_year": 9250,
+                    "international_full_time": 14000,
+                    "international_integrated_foundation_year": 14000,
+                    "placement_fee": null,
+                    "additional_cost": null
+                }
+            ],
+            "industry_patenership_gruop": "Canal & River Trust"
+        }
+    ],
+    "currency_conersionrate": {
+        "pound_to_euro": 100,
+        "pounnd_to_us": 1.25
+    }
+}
