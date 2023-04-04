@@ -10,7 +10,7 @@
                     "full_time_foundation": null,
                     "part_time": null
                 },
-                "starting": ["September,February"],
+                "starting": ["September", "February"],
                 "location": "waterside",
                 "overview": "Our MSc Accounting and Finance course provides you with the essential",
                 "modules": [{
@@ -245,7 +245,7 @@
                     "full_time_foundation": null,
                     "part_time": null
                 },
-                "starting": ["September,February"],
+                "starting": ["September", "February "],
                 "location": "waterside",
                 "overview": "Our MSc Accounting and Finance course provides you with the essential",
                 "modules": [{
@@ -620,7 +620,7 @@
                     "full_time_foundation": null,
                     "part_time": null
                 },
-                "starting": ["Janua ry", "June", "September"],
+                "starting": ["January", "June", "September"],
                 "location": "waterside",
                 "overview": "If you are already working within this discipline or are considering a Project Management career, then this course is ideal. Our Project Management course is designed to allow entry from any degree discipline and a diverse range of work backgrounds. The skills that you will gain through studying this course are transferable to a wide variety of industries – gas, engineering, information technology, healthcare, events, public sector and logistics.",
                 "modules": [{
