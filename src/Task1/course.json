@@ -80,12 +80,14 @@
                     "session": "23/24",
                     "uk_full_time": 8010,
                     "international_full_time": 16500,
+                    "uk_part_time": null,
                     "placement_fee": 1000,
                     "additional_cost": 0
                 },
                 {
                     "session": "22/23",
                     "uk_full_time": 7650,
+                    "uk_part_time": null,
                     "international_full_time": 15000,
                     "placement_fee": 1000,
                     "additional_cost": 0
@@ -209,6 +211,7 @@
                     "uk_full_time": 9250,
                     "uk_part_time": [{
                         "fees": 1540,
+                        "year": null,
                         "credit_hours": null,
                         "per_credit_hour": 20
                     }],
@@ -223,6 +226,7 @@
                     "uk_full_time": 9250,
                     "uk_part_time": [{
                         "fees": 1500,
+                        "year": null,
                         "credit_hours": null,
                         "per_credit_hour": 20
                     }],
@@ -380,7 +384,7 @@
             },
             "entry_requirements": {
                 "courses": null,
-                "description": "If you hold a recognised first or second class ",
+                "description": "Applicants will normally hold a recognised first or second class honours degree from a UK university or international equivalent in a relevant subject area. We expect that you will have a knowledge of Engineering from almost any discipline (e.g. Mechanical, Design, Electrical, Manufacturing) and are interested in developing your engineering skills in the area of modelling, control and sustainability. ",
                 "english_language_requirements": "Minimum standard – IELTS 6.5 (or equivalent) for study at postgraduate level."
             },
             "fees_and_funding": [{
@@ -388,10 +392,12 @@
                     "uk_full_time": 8010,
                     "uk_part_time": [{
                             "fees": 4450,
+                            "year": 1,
                             "credit_hours": 100
                         },
                         {
                             "fees": 3560,
+                            "year": 2,
                             "credit_hours": 80
                         }
                     ],
@@ -404,10 +410,12 @@
                     "uk_full_time": 7650,
                     "uk_part_time": [{
                             "fees": 4250,
+                            "year": 1,
                             "credit_hours": 100
                         },
                         {
                             "fees": 3400,
+                            "year": 2,
                             "credit_hours": 80
                         }
                     ],
@@ -483,6 +491,7 @@
                     "uk_full_time": 9250,
                     "uk_part_time": [{
                         "fees": 1540,
+                        "year": null,
                         "credit_hours": null,
                         "per_credit_hour": 20
                     }],
@@ -497,6 +506,7 @@
                     "uk_full_time": 9250,
                     "uk_part_time": [{
                         "fees": 1500,
+                        "year": null,
                         "credit_hours": null,
                         "per_credit_hour": 20
                     }],
@@ -807,6 +817,7 @@
                     "uk_full_time": 9250,
                     "uk_part_time": [{
                         "fees": 1540,
+                        "year": null,
                         "credit_hours": null,
                         "per_credit_hour": 20
                     }],
@@ -821,6 +832,7 @@
                     "uk_full_time": 9250,
                     "uk_part_time": [{
                         "fees": 1500,
+                        "year": null,
                         "credit_hours": null,
                         "per_credit_hour": 20
                     }],
@@ -1243,6 +1255,7 @@
                     "uk_full_time": 9250,
                     "uk_part_time": [{
                         "fees": 1540,
+                        "year": null,
                         "credit_hours": null,
                         "per_credit_hour": 20
                     }],
@@ -1257,6 +1270,7 @@
                     "uk_full_time": 9250,
                     "uk_part_time": [{
                         "fees": 1500,
+                        "year": null,
                         "credit_hours": null,
                         "per_credit_hour": 20
                     }],

@@ -142,9 +142,12 @@
                                             "credit_hours": {},
                                             "per_credit_hour": {
                                                 "type": "number"
+                                            },
+                                            "year": {
+                                                "type": "number"
                                             }
                                         },
-                                        "required": ["fees", "credit_hours", "per_credit_hour"]
+                                        "required": ["fees", "credit_hours", "per_credit_hour", "year"]
                                     }
                                 },
                                 "uk_integrated_foundation_year": {
