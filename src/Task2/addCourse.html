@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="addCourse.css" />
+    <script src="addCourse.js "></script>
+</head>
+
+<body>
+    <h1>New Course Entry Form</h1>
+    <form id="newCourseForm">
+        <h3>Course Title</h3>
+        <label for="title" style="margin-inline-start: 20px">Title:</label>
+        <input type="text" id="title" name="title" />
+
+        <br />
+        <br />
+
+        <h3>Level</h3>
+        <input type="radio" id="postGradute" name="level" value="postGradute" />
+        <label for="postGradute"> Post Gradute</label>
+        <input type="radio" id="underGradute" name="level" value="underGradute" />
+        <label for="underGradute"> Under Gradute</label>
+
+        <br />
+        <br />
+
+        <h3>Duration</h3>
+        <!-- full_time -->
+        <label for="full_time" style="margin-inline-start: 20px">Full Time Duration:</label>
+        <select name=" full_time " id="full_time ">
+        <option value="select ">Select Year</option>
+        <option value="1 ">1 Year</option>
+        <option value="2 ">2 Year</option>
+        <option value="3 ">3 Year</option>
+        <option value="4 ">4 Year</option>
+      </select>
+        <!-- full_time_with_placement -->
+        <label for="full_time_with_placement " style="margin-inline-start: 20px ">Full Time With Placement:</label
+      >
+      <select name="full_time_with_placement " id="full_time_with_placement ">
+        <option value="select ">Select Year</option>
+        <option value="1 ">1 Year</option>
+        <option value="2 ">2 Year</option>
+        <option value="3 ">3 Year</option>
+        <option value="4 ">4 Year</option>
+      </select>
+
+      <!-- full_time_foundation -->
+      <label for="full_time_foundation " style="margin-inline-start: 20px "
+        >Full Time Foundation:</label
+      >
+      <select name="full_time_foundation " id="full_time_foundation ">
+        <option value="select ">Select Year</option>
+        <option value="1 ">1 Year</option>
+        <option value="2 ">2 Year</option>
+        <option value="3 ">3 Year</option>
+        <option value="4 ">4 Year</option>
+      </select>
+
+      <!-- part_time -->
+      <label for="part_time " style="margin-inline-start: 20px "
+        >Part Time:</label
+      >
+      <select name="part_time " id="part_time ">
+        <option value="select ">Select Year</option>
+        <option value="1 ">1 Year</option>
+        <option value="2 ">2 Year</option>
+        <option value="3 ">3 Year</option>
+        <option value="4 ">4 Year</option>
+      </select>
+
+      <br />
+      <br />
+
+      <h3>Course Start</h3>
+      <label for="starting " style="margin-inline-start: 20px ">Starting:</label>
+        <select name="starting " id="starting ">
+        <option value="February ">February</option>
+        <option value="April ">April</option>
+        <option value="September ">September</option>
+      </select>
+
+        <br />
+        <br />
+
+        <h3>Course Location</h3>
+        <label for="location " style="margin-inline-start: 20px ">Location:</label>
+        <select name="location " id="location ">
+        <option value="Waterside ">Waterside</option>
+        <option value="April ">April</option>
+      </select>
+
+        <br />
+        <br />
+
+        <h3>Course Overview</h3>
+        <textarea rows="4 " cols="50 " name="overview " form="newCourseForm " style="margin-inline-start: 20px " placeholder="Describe course here... "></textarea>
+        <br />
+        <br />
+
+        <h3>Modules</h3>
+        <button onclick="openAddModuleModal()" type="button" id="addModule " style="margin-inline-start: 20px ">Add Module</button>
+        <br />
+        <br />
+
+
+
+
+        <button type="submit ">Submit</button>
+    </form>
+
+    <div id="addModuleModal " class="modal ">
+        <div class="modal-content ">
+            <span class="close" onclick="document.getElementById('addModuleModal').style.display='none'">&times;</span>
+            <h2>Add New Item</h2>
+            <form id="myModalForm ">
+                <label for="name ">Name:</label>
+                <input type="text " id="name " name="name "><br>
+                <label for="quantity ">Quantity:</label>
+                <input type="number " id="quantity " name="quantity "><br>
+                <button type="button " id="saveItem ">Save Item</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
