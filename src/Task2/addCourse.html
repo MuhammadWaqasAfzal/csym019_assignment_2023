@@ -1,201 +1,242 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <link rel="stylesheet" href="addCourse.css" />
-    <script src="addCourse.js" defer></script>
-</head>
-
-<body>
-    <h1>New Course Form</h1>
-    <form id="newCourseForm">
-        <h2>Course Title</h2>
-        <label for="title" style="margin-inline-start: 20px">Title:</label>
-        <input type="text" id="title" name="title" placeholder="Enter Title" />
-
-        <br />
-        <br />
-
-        <h2>Level</h2>
-        <input type="radio" id="postGradute" name="level" value="postGradute" />
-        <label for="postGradute"> Post Gradute</label>
-        <input type="radio" id="underGradute" name="level" value="underGradute" />
-        <label for="underGradute"> Under Gradute</label>
-
-        <br />
-        <br />
-
-        <h2>Duration</h2>
-        <!-- full_time -->
-        <label for="full_time" style="margin-inline-start: 20px">Full Time Duration:</label>
-        <select name=" full_time " id="full_time ">
-      <option value="select ">Select Year</option>
-      <option value="1 ">1 Year</option>
-      <option value="2 ">2 Year</option>
-      <option value="3 ">3 Year</option>
-      <option value="4 ">4 Year</option>
-    </select>
-        <!-- full_time_with_placement -->
-        <label for="full_time_with_placement " style="margin-inline-start: 20px ">Full Time With Placement:</label>
-        <select name="full_time_with_placement " id="full_time_with_placement ">
-      <option value="select ">Select Year</option>
-      <option value="1 ">1 Year</option>
-      <option value="2 ">2 Year</option>
-      <option value="3 ">3 Year</option>
-      <option value="4 ">4 Year</option>
-    </select>
-
-        <!-- full_time_foundation -->
-        <label for="full_time_foundation " style="margin-inline-start: 20px ">Full Time Foundation:</label>
-        <select name="full_time_foundation " id="full_time_foundation ">
-      <option value="select ">Select Year</option>
-      <option value="1 ">1 Year</option>
-      <option value="2 ">2 Year</option>
-      <option value="3 ">3 Year</option>
-      <option value="4 ">4 Year</option>
-    </select>
-
-        <!-- part_time -->
-        <label for="part_time " style="margin-inline-start: 20px ">Part Time:</label>
-        <select name="part_time " id="part_time ">
-      <option value="select ">Select Year</option>
-      <option value="1 ">1 Year</option>
-      <option value="2 ">2 Year</option>
-      <option value="3 ">3 Year</option>
-      <option value="4 ">4 Year</option>
-    </select>
-
-        <br />
-        <br />
-
-        <h3>Course Start</h3>
-        <label for="starting " style="margin-inline-start: 20px ">Starting:</label>
-        <select name="starting " id="starting ">
-      <option value="February ">February</option>
-      <option value="April ">April</option>
-      <option value="September ">September</option>
-    </select>
-
-        <br />
-        <br />
-
-        <h2>Course Location</h2>
-        <label for="location " style="margin-inline-start: 20px ">Location:</label>
-        <select name="location " id="location ">
-      <option value="Waterside ">Waterside</option>
-      <option value="April ">April</option>
-    </select>
-
-        <br />
-        <br />
-
-        <h2>Course Overview</h2>
-        <textarea rows="4 " cols="50 " name="overview " form="newCourseForm " style="margin-inline-start: 20px " placeholder="Describe course here... "></textarea>
-        <br />
-        <br />
-
-        <h2>Modules</h2>
-        <button class="trigger" id="btn-modal" type="button" style="margin-inline-start: 20px ">Add Module</button>
-        <br />
-        <br />
+    <head>
+        <link rel="stylesheet" href="addCourse.css" />
 
 
-        <h2>Fees and Funding</h2>
-        <button class="triggerFee" id="btn-modal" type="button" style="margin-inline-start: 20px ">Add
-      Fees and Funding</button>
-        <br />
-        <br />
+    </head>
+
+    <body onload="onLoadPage()">
+        <h1>New Course Entry Form</h1>
+        <form id="newCourseForm" onsubmit="FormSubmit(event)">
+            <h3>Course Title</h3>
+            <label for="title" >Title:</label>
+            <input type="text" id="title" name="title" required placeholder="Enter Title" />
+
+            <br />
+            <br />
+
+            <h3>Level</h3>
+            <input type="radio" class="radioInput" id="postGradute" name="level" required value="postGradute" />
+            <label for="postGradute"> Post Gradute</label>
+            <input type="radio" class="radioInput" id="underGradute" name="level" required value="underGradute" />
+            <label for="underGradute"> Under Gradute</label>
+
+            <br />
+            <br />
+
+            <h3>Duration</h3>
+            <!-- full_time -->
+            <label for="full_time" >Full Time Duration:</label>
+            <select name=" full_time" id="full_time" required>
+                <option value="select">Select Year</option>
+                <option value="1">1 Year</option>
+                <option value="2">2 Year</option>
+                <option value="3">3 Year</option>
+                <option value="4">4 Year</option>
+            </select>
+            <br>
+            <!-- full_time_with_placement -->
+            <label for="full_time_with_placement" >Full Time With Placement:</label>
+            <select name="full_time_with_placement" id="full_time_with_placement" required>
+                <option value="select">Select Year</option>
+                <option value="1">1 Year</option>
+                <option value="2">2 Year</option>
+                <option value="3">3 Year</option>
+                <option value="4">4 Year</option>
+            </select><br>
+
+            <!-- full_time_foundation -->
+            <label for="full_time_foundation" >Full Time Foundation:</label>
+            <select name="full_time_foundation" id="full_time_foundation" required>
+                <option value="select">Select Year</option>
+                <option value="1">1 Year</option>
+                <option value="2">2 Year</option>
+                <option value="3">3 Year</option>
+                <option value="4">4 Year</option>
+            </select>
+            <br>
+            <!-- part_time -->
+            <label for="part_time" >Part Time:</label>
+            <select name="part_time" id="part_time" required>
+                <option value="select">Select Year</option>
+                <option value="1">1 Year</option>
+                <option value="2">2 Year</option>
+                <option value="3">3 Year</option>
+                <option value="4">4 Year</option>
+            </select>
+
+            <br />
+            <br />
+
+            <h3>Course Start</h3>
+            <label for="starting" >Starting:</label>
+            <select name="starting" id="starting">
+                <option value="February">February</option>
+                <option value="April">April</option>
+                <option value="September">September</option>
+            </select>
+
+            <br />
+            <br />
+
+            <h3>Course Location</h3>
+            <label for="location" >Location:</label>
+            <select name="location" id="location">
+                <option value="Waterside">Waterside</option>
+                <option value="April">April</option>
+            </select>
+
+            <br />
+            <br />
+
+            <h3>Course Overview</h3>
+            <textarea id="overview" rows="4" required cols="50" name="overview" form="newCourseForm"
+                 placeholder="Describe course here..."></textarea>
+            <br />
+            <br />
+
+            <h3>Modules</h3>
+            <button class="trigger" onclick="toggleModal()" id="btn-modal" type="button"
+                >Add
+                Module</button>
+            <br />
+            <br />
+            <br />
+
+            <table id="moduletable">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Name</th>
+                        <th>Credit Hours</th>
+                        <th>Code</th>
+                        <th>Status</th>
+                        <th>Pre Requisites</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <br />
+            <br />
+            <br />
+
+            <h3>Fees and Funding</h3>
+            <button class="triggerFee" onclick="toggleModalFee()" id="btn-modal" type="button"
+                >Add
+                Fees and Funding</button>
+            <br />
+            <br />
+            <ul id="myList"></ul>
+            <br />
 
 
 
-        <button type="submit ">Submit</button>
-    </form>
+            <button class="button" type="submit">Submit</button>
+        </form>
 
-    <div id="addModuleModal " class="modal">
-        <div class="modal-content ">
-            <span class="close-button">×</span>
-            <h2>Add New Item</h2>
-            <form id="ModuleForm" action="" method="post">
-                <div class="select-wrapper">
-                    <label for="category">Category:</label>
-                    <select class="select-category" id="category">
-            <option value="placement">Placement </option>
-            <option value="non-placement">Non-placement</option>
-            <option value="stage1">Stage 1</option>
-            <option value="stage2">Stage 2</option>
-            <option value="stage3">Stage 3</option>
-          </select>
-                </div>
-                <label for="name ">Name:</label>
-                <input type="text " id="name" name="name" placeholder="Name"><br>
-                <label for="credit_hours">Credit Hours:</label>
-                <input type="number" id="credit_hours" name="credit_hours" placeholder="Enter Credit Hours"><br>
-                <label for="code">Code:</label>
-                <input type="text" id="code" name="code" placeholder="Enter Code"><br>
-                <div class="select-wrapper">
-                    <label for="status">Status:</label>
-                    <select class="select-status" id="status">
-            <option value="compulsary">Compulsary </option>
-            <option value="designate">Designate</option>
-          </select>
-                </div>
-                <label for="pre-requisites">Pre-requisites:</label>
-                <input type="text" id="pre_requisites" name="pre-requisites" placeholder="Pre-requisites"><br>
-                <button type="button" onclick="moduleValues()" id="saveItem">Save Item</button>
-            </form>
-        </div>
-    </div>
-    <div id="addModuleModal " class="modalFee">
-        <div class="modal-contentFee ">
-            <span class="close-buttonFee">×</span>
-            <h2>Add New Item</h2>
-            <form id="ModuleForm" action="" method="post">
-                <div class="select-wrapper">
-                    <label for="session">Session:</label>
-                    <select class="select-session" id="session">
-            <option value="22/23">22/23 </option>
-            <option value="23/24">23/24</option>
-          </select>
-                </div>
-                <p>Select an option:</p>
-
-                <div>
-                    <input onclick="showfull()" type="radio" id="hide" name="example" value="hide" />
-                    <label for="hide">UK Full Time:</label>
-                </div>
-
-                <div>
-                    <input onclick="showpart()" type="radio" id="show" name="example" value="show" />
-                    <label for="show">UK Part Time:</label>
-                </div>
-                <div id="ukFull" class="hide">
-                    <label for="uk_full_time ">UK Full Time:</label>
-                    <input type="number " id="uk_full_time" name="uk_full_time" placeholder="Enter Fee"><br>
-                </div>
-                <div id="UkPart" class="hide">
-                    <label for="fees">Fees:</label>
-                    <input type="number" id="fees" name="fees" placeholder="Enter Fees"><br>
-                    <label for="year">Year:</label>
-                    <input type="number" id="year" name="year" placeholder="Enter year"><br>
+        <div id="addModuleModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button cross" onclick="toggleModal()">×</span>
+                <h2>Add New Item</h2>
+                <form id="ModuleForm" action="" method="post" onsubmit="moduleValues(event)">
+                    <div class="select-wrapper">
+                        <label for="category">Category:</label>
+                        <select class="select-category" id="category">
+                            <option value="placement">Placement </option>
+                            <option value="non-placement">Non-placement</option>
+                            <option value="stage1">Stage 1</option>
+                            <option value="stage2">Stage 2</option>
+                            <option value="stage3">Stage 3</option>
+                        </select>
+                    </div>
+                    <label for="name">Name:</label>
+                    <input type="text" required id="name" name="name" placeholder="Name"><br>
                     <label for="credit_hours">Credit Hours:</label>
-                    <input type="number" id="credit_hours" name="credit_hours" placeholder="Enter Credit Hours"><br>
-                    <label for="per_credit_hour">Per Credit Hour:</label>
-                    <input type="number" id="per_credit_hour" name="per_credit_hour" placeholder="Enter Per Credit Hour"><br>
-                </div>
-                <label for="uk_integrated_foundation_year">UK integrated foundation year:</label>
-                <input type="number" id="uk_integrated_foundation_year" name="uk_integrated_foundation_year" placeholder="UK integrated foundation year"><br>
-                <label for="international_full_time">International full time:</label>
-                <input type="number" id="international_full_time" name="international_full_time" placeholder="International full time"><br>
-                <label for="international_integrated_foundation_year">International integrated foundation year:</label>
-                <input type="number" id="international_integrated_foundation_year" name="international_integrated_foundation_year" placeholder="International integrated foundation year"><br>
-                <label for="placement_fee">Placement fee:</label>
-                <input type="number" id="placement_fee" name="placement_fee" placeholder="Placement fee"><br>
-                <label for="additional_cost">Additional cost:</label>
-                <input type="number" id="additional_cost" name="additional_cost" placeholder="Additional cost"><br>
-                <button type="button" onclick="FEEValues()" id="saveItem">Save Item</button>
-            </form>
+                    <input required type="number" id="credit_hours" name="credit_hours"
+                        placeholder="Enter Credit Hours"><br>
+                    <label for="code">Code:</label>
+                    <input required type="text" id="code" name="code" placeholder="Enter Code"><br>
+                    <div class="select-wrapper">
+                        <label for="status">Status:</label>
+                        <select class="select-status" id="status">
+                            <option value="compulsary">Compulsary </option>
+                            <option value="designate">Designate</option>
+                        </select>
+                    </div>
+                    <label for="pre-requisites">Pre-requisites:</label>
+                    <input required type="text" id="pre_requisites" name="pre-requisites"
+                        placeholder="Pre-requisites"><br>
+                    <div style="margin:auto; display:block">
+
+                        <button type="submit" class="cross2 button" id="saveItem">Save
+                            Item</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-</body>
+
+        <div id="addModuleModal" class="modalFee">
+            <div class="modal-contentFee">
+                <span class="close-buttonFee" onclick="toggleModalFee()">×</span>
+                <h2>Add New Item</h2>
+                <form id="ModuleForm" action="" method="post" onsubmit="FEEValues(event)">
+                    <div class="select-wrapper">
+                        <label for="session">Session:</label>
+                        <select class="select-session" id="session">
+                            <option value="22/23">22/23 </option>
+                            <option value="23/24">23/24</option>
+                        </select>
+                    </div>
+                    <p>Select an option:</p>
+
+                    <div>
+                        <input onclick="showfull()" type="radio" class="radioInput" id="hide" name="example" value="hide" />
+                        <label for="hide">UK Full Time:</label>
+                    </div>
+
+                    <div>
+                        <input onclick="showpart()" type="radio" class="radioInput" id="show" name="example" value="show" />
+                        <label for="show">UK Part Time:</label>
+                    </div>
+                    <div id="ukFull" class="hide">
+                        <label for="uk_full_time">UK Full Time:</label>
+                        <input type="number" id="uk_full_time" name="uk_full_time" placeholder="Enter Fee"><br>
+                    </div>
+                    <div id="UkPart" class="hide">
+                        <label for="fees">Fees:</label>
+                        <input type="number" id="fees" name="fees" placeholder="Enter Fees"><br>
+                        <label for="year">Year:</label>
+                        <input type="number" id="year" name="year" placeholder="Enter year"><br>
+                        <label for="credit_hours">Credit Hours:</label>
+                        <input type="number" id="credit_hours" name="credit_hours" placeholder="Enter Credit Hours"><br>
+                        <label for="per_credit_hour">Per Credit Hour:</label>
+                        <input type="number" id="per_credit_hour" name="per_credit_hour"
+                            placeholder="Enter Per Credit Hour"><br>
+                    </div>
+                    <label for="uk_integrated_foundation_year">UK integrated foundation year:</label>
+                    <input type="number" id="uk_integrated_foundation_year" name="uk_integrated_foundation_year"
+                        required placeholder="UK integrated foundation year"><br>
+                    <label for="international_full_time">International full time:</label>
+                    <input type="number" id="international_full_time" name="international_full_time" required
+                        placeholder="International full time"><br>
+                    <label for="international_integrated_foundation_year">International integrated foundation
+                        year:</label>
+                    <input type="number" id="international_integrated_foundation_year"
+                        name="international_integrated_foundation_year" required
+                        placeholder="International integrated foundation year"><br>
+                    <label for="placement_fee">Placement fee:</label>
+                    <input type="number" id="placement_fee" name="placement_fee" required
+                        placeholder="Placement fee"><br>
+                    <label for="additional_cost">Additional cost:</label>
+                    <input type="number" id="additional_cost" name="additional_cost" required
+                        placeholder="Additional cost"><br>
+                    <button type="submit" class="button" id="saveItem">Save Item</button>
+                </form>
+            </div>
+        </div>
+    </body>
 
 </html>

@@ -4,12 +4,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    
 }
 
 .wrapper {
     height: 100%;
     width: 300px;
-    position: relative;
+    position: fixed;
 }
 
 .wrapper .menu-btn {
@@ -152,13 +153,10 @@
 }
 
 .content {
+    width: calc(100% - 250px);
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, 60%);
-    color: #202020;
-    z-index: -1;
-    width: 100%;
-    text-align: center;
+    left: 320px;
+    padding: 16px;
 }
 
 .content .header {
@@ -166,7 +164,29 @@
     font-weight: 700;
 }
 
-.content p {
-    font-size: 40px;
-    font-weight: 700;
+input ,select{
+    font-size: 1rem;
+    color: #495055 !important;
+    width: 50%;
+    padding: 10px !important;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 10px;
+    resize: none;
+    border: 1px solid #ced4da !important;
 }
+.radioInput{
+    width: 10% !important;
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }

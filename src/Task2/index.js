@@ -20,7 +20,7 @@ function loadPage(fileName) {
 }
 
 function onPageLoad() {
-    loadPage("addCourse.html")
+    loadPage("generateReport.html")
 }
 
 document.addEventListener("DOMContentLoaded", onPageLoad); //myLoadEvent);
