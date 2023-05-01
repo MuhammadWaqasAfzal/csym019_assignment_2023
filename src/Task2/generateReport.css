@@ -1,0 +1,38 @@
+#courses {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+}
+
+#courses td,
+#courses th {
+    border: 4px solid rgb(151, 149, 141);
+    padding: 8px;
+    min-width: 350px;
+    vertical-align: top;
+}
+
+#courses tr:nth-child(even) {
+    background-color: #6604042d;
+}
+
+#courses tr:hover {
+    background-color: #773434;
+    color: white;
+}
+
+#courses th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #141615;
+    color: white;
+}
+
+body {
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(95, 90, 62);
+}
