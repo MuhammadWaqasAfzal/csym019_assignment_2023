@@ -1,14 +1,83 @@
 document.addEventListener("DOMContentLoaded", onPageLoad); //myLoadEvent);
+var coursesList;
+var selectedCoursesList;
+var checkBoxList;
+var chart;
+var modal;
+var span;
+
+
+
+
+function sortCoursesList(a, b) {
+    var textA = a.title.toUpperCase();
+    var textB = b.title.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+}
+
+function selectAllCourses() {
+    let checkbox = document.getElementById('checkAllCourses');
+    if (!checkbox.checked) {
+        coursesList.forEach((course, index) => {
+            selectedCoursesList.push(index);
+        });
+        checkBoxList.forEach((checkBox, index) => {
+            selectedCoursesList.push(index);
+            checkBox.checked = true;
+        });
+        checkbox.checked = true;
+    } else {
+        selectedCoursesList = []
+        checkbox.checked = false;
+        checkBoxList.forEach((checkBox) => {
+            checkBox.checked = false;
+        });
+    }
+
+}
+
+
 
 function onPageLoad() {
+
+
+
+
+
+
+    coursesList = [];
+    selectedCoursesList = [];
+    checkBoxList = [];
     $.ajax({
         url: "http://localhost:3000/allCourses.php",
         type: "GET",
         dataType: "json",
         success: function(data) {
+            let checkbox = document.getElementById('checkAllCourses');
+            checkbox.checked = false;
+            data.data.sort(sortCoursesList);
+            coursesList = data.data;
             const tableBody = document.querySelector("#courses tbody");
-            data.data.forEach((course) => {
+            data.data.forEach((course, index) => {
                 const row = tableBody.insertRow();
+
+                //creating cell check box
+                const checkBoxCell = row.insertCell();
+                //  checkBoxCell.innerHTML = $("table").simpleCheckboxTable();
+                // var checkbox = document.createElement("INPUT");
+                // checkbox.type = "checkbox";
+                // checkBoxCell.innerHTML = checkbox
+                var checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkBoxList.push(checkbox);
+                checkbox.onclick = function courseSelected() {
+                    selectedCoursesList.push(index)
+                };
+                //checkbox.value = stringArray[6];
+
+                checkBoxCell.appendChild(checkbox);
+
+
 
                 //creating cell for id and inserting data in it
                 const idCell = row.insertCell();
@@ -142,7 +211,6 @@ function onPageLoad() {
 
 
                 course.fees.forEach((item) => {
-                    console.log(course.fees);
                     if (item.session === "23/24") {
                         session1 =
                             session1 + "<li> UK – Full Time: " + item.uk_full_time_fee + "</li>";
@@ -256,4 +324,67 @@ function onPageLoad() {
             console.log("Fetch Error");
         },
     });
+}
+
+
+function generateReport() {
+    var courseTitles = [];
+    var creditHours = [];
+    selectedCoursesList.forEach((value) => {
+        const course = coursesList[value];
+        course.modules.forEach((module) => {
+            creditHours.push(module.credit_hours);
+            courseTitles.push(module.name);
+
+        });
+
+    });
+    console.log(courseTitles);
+    console.log(creditHours);
+    const ctx = document.getElementById('chart');
+
+    chart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: courseTitles,
+            datasets: [{
+                label: '# of Credit Hours',
+                data: creditHours,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+
+}
+
+
+
+function openModal() {
+    modal = document.getElementById("myModal");
+    span = document.getElementsByClassName("close")[0];
+    modal.style.display = "block";
+    generateReport();
+}
+
+function spanClick() {
+    modal = document.getElementById("myModal");
+    span = document.getElementsByClassName("close")[0];
+    modal.style.display = "none";
+    chart.destroy();
+
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }

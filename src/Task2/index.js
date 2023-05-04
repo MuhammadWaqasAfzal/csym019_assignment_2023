@@ -5,7 +5,6 @@ function loadPage(fileName) {
     if (fileName) {
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
-            console.log("khan");
             //  console.log(this.readyState);
 
             if (this.readyState == 4) {

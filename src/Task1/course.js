@@ -232,7 +232,6 @@ function onPageLoad() {
                 });
                 feesCell.innerHTML =
                     "<html><body>" + session1 + "</ul>" + session2 + "</ul>" + "</body></html>";
-                console.log(course.id);
                 const requirementsCell = row.insertCell();
                 requirementsCell.innerHTML = "<html><body>" + course.entry_requirements.description + "<h3>English language Requirements</h3><ul><li>" +
                     course.entry_requirements.english_language_requirements + "</li></ul></body></html > "

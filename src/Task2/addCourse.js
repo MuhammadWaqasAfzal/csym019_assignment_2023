@@ -183,22 +183,126 @@ function FormSubmit(event) {
     var starting = document.getElementById('starting').value
     var location = document.getElementById('location').value
     var overview = document.getElementById('overview').value
+    var entryRequirements = document.getElementById('entryRequirements').value
 
 
-    var ModuleData = JSON.parse(window.localStorage.getItem('ModuleData'))
+    var moduleData = JSON.parse(window.localStorage.getItem('ModuleData'))
     var feeData = JSON.parse(window.localStorage.getItem('feeData'))
-    console.log("waqas");
-    console.log({
-        title,
-        level,
-        full_time,
-        full_time_with_placement,
-        full_time_foundation,
-        part_time,
-        starting,
-        location,
-        overview,
-        ModuleData,
-        feeData
-    })
+
+    // console.log({
+    //     title,
+    //     level,
+    //     full_time,
+    //     full_time_with_placement,
+    //     full_time_foundation,
+    //     part_time,
+    //     starting,
+    //     location,
+    //     overview,
+    //     entryRequirements,
+    //     moduleData,
+    //     feeData
+    // })
+
+    // var courseData = {
+    //     "title": title,
+    //     "level": level,
+    //     "full_time_duration": full_time,
+    //     "full_time_with_placement_duration": full_time_with_placement,
+    //     "full_time_foundation_duration": full_time_foundation,
+    //     "part_time_duration": part_time,
+    //     "location": location,
+    //     "start": starting,
+    //     "overview": overview,
+    //     "modules": [{
+    //             "category": "stage1",
+    //             "name": "1111111111",
+    //             "credit_hours": 20,
+    //             "code": "20131",
+    //             "status": "compulsary",
+    //             "pre_requisites": null
+    //         },
+    //         {
+    //             "category": "stage1",
+    //             "name": "12",
+    //             "credit_hours": 20,
+    //             "code": "20131",
+    //             "status": "compulsary",
+    //             "pre_requisites": 11
+    //         },
+    //         {
+    //             "category": "stage1",
+    //             "name": "13",
+    //             "credit_hours": 20,
+    //             "code": "20131",
+    //             "status": "compulsary",
+    //             "pre_requisites": "12"
+    //         },
+    //         {
+    //             "category": "stage1",
+    //             "name": "14",
+    //             "credit_hours": 20,
+    //             "code": "20131",
+    //             "status": "compulsary",
+    //             "pre_requisites": "13"
+    //         }
+    //     ],
+    //     "fees": [{
+    //             "session": "22/23",
+    //             "uk_full_time_fee": 122,
+    //             "uk_part_time_fee": 122,
+    //             "uk_international_foundation_year": 0,
+    //             "international_full_year_fee": 122,
+    //             "international_integrated_foundation_year_fee": 0,
+    //             "placement_fee": 122,
+    //             "additional_cost": 122
+    //         },
+    //         {
+    //             "session": "23/24",
+    //             "uk_full_time_fee": 132,
+    //             "uk_part_time_fee": 132,
+    //             "uk_international_foundation_year": 132,
+    //             "international_full_year_fee": 132,
+    //             "international_integrated_foundation_year_fee": 132,
+    //             "placement_fee": 132,
+    //             "additional_cost": 0
+    //         }
+    //     ],
+    //     "entryRequirements": entryRequirements
+    // };
+
+
+    var courseData = {
+        "title": title,
+        "level": level,
+        "full_time_duration": full_time,
+        "full_time_with_placement_duration": full_time_with_placement,
+        "full_time_foundation_duration": full_time_foundation,
+        "part_time_duration": part_time,
+        "location": location,
+        "start": starting,
+        "overview": overview,
+        "modules": moduleData,
+        "fees": feeData,
+        "entryRequirements": entryRequirements
+    };
+
+
+
+
+    $.ajax({
+        url: "http://localhost:3000/addCourse.php",
+        type: "POST",
+        data: courseData,
+        dataType: "html",
+        success: function(data) {
+            console.log("course added successfully");
+        },
+        error: function(xhr, status, error) {
+            console.log(error);
+        },
+    });
+
+
+
 }
