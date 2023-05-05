@@ -74,7 +74,7 @@ function onPageLoad() {
                 var isStage1 = false;
                 course.course_details.modules.forEach((item) => {
                     if (item.category === "stage1") {
-                        stage1Modules = stage1Modules + "<li>" + item.name + "</li>";
+                        stage1Modules = stage1Modules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" + "</li>";
                         isStage1 = true;
                     }
                 });
@@ -85,7 +85,7 @@ function onPageLoad() {
                 var isStage2 = false;
                 course.course_details.modules.forEach((item) => {
                     if (item.category === "stage2") {
-                        stage2Modules = stage2Modules + "<li>" + item.name + "</li>";
+                        stage2Modules = stage2Modules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" + "</li>";
                         isStage2 = true;
                     }
                 });
@@ -96,7 +96,7 @@ function onPageLoad() {
                 var isStage3 = false;
                 course.course_details.modules.forEach((item) => {
                     if (item.category === "stage3") {
-                        stage3Modules = stage3Modules + "<li>" + item.name + "</li>";
+                        stage3Modules = stage3Modules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" + "</li>";
                         isStage3 = true;
                     }
                 });
@@ -107,7 +107,7 @@ function onPageLoad() {
                 var isPlacement = false;
                 course.course_details.modules.forEach((item) => {
                     if (item.category === "placement") {
-                        placementModules = placementModules + "<li>" + item.name + "</li>";
+                        placementModules = placementModules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" + "</li>";
                         isPlacement = true;
                     }
                 });
@@ -119,7 +119,7 @@ function onPageLoad() {
                 course.course_details.modules.forEach((item) => {
                     if (item.category === "non_placement") {
                         nonPlacementModules =
-                            nonPlacementModules + "<li>" + item.name + "</li>";
+                            nonPlacementModules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" + "</li>";
                         isNonPlacement = true;
                     }
                 });

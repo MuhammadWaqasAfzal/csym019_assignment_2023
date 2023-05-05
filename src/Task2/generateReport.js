@@ -37,17 +37,20 @@ function selectAllCourses() {
 }
 
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 
 function onPageLoad() {
-
-
-
-
-
-
     coursesList = [];
     selectedCoursesList = [];
     checkBoxList = [];
+    callApiToGetCoursesData();
+}
+
+
+function callApiToGetCoursesData() {
     $.ajax({
         url: "http://localhost:3000/allCourses.php",
         type: "GET",
@@ -63,18 +66,12 @@ function onPageLoad() {
 
                 //creating cell check box
                 const checkBoxCell = row.insertCell();
-                //  checkBoxCell.innerHTML = $("table").simpleCheckboxTable();
-                // var checkbox = document.createElement("INPUT");
-                // checkbox.type = "checkbox";
-                // checkBoxCell.innerHTML = checkbox
                 var checkbox = document.createElement("input");
                 checkbox.type = "checkbox";
                 checkBoxList.push(checkbox);
                 checkbox.onclick = function courseSelected() {
                     selectedCoursesList.push(index)
                 };
-                //checkbox.value = stringArray[6];
-
                 checkBoxCell.appendChild(checkbox);
 
 
@@ -84,10 +81,10 @@ function onPageLoad() {
                 idCell.innerText = course.Id;
 
                 const titleCell = row.insertCell();
-                titleCell.innerText = course.title;
+                titleCell.innerText = capitalizeFirstLetter(course.title);
 
                 const levelCell = row.insertCell();
-                levelCell.innerText = course.level;
+                levelCell.innerText = capitalizeFirstLetter(course.level);
 
                 const durationCell = row.insertCell();
                 var year = " year\n";
@@ -130,65 +127,66 @@ function onPageLoad() {
                 //  course.starting.forEach((item) => {
                 //      starting = starting + item + "\n";
                 //  });
-                startingCell.innerText = course.start;
+                startingCell.innerText = capitalizeFirstLetter(course.start);
 
                 const locationCell = row.insertCell();
-                locationCell.innerText = course.location;
+                locationCell.innerText = capitalizeFirstLetter(course.location);
 
                 const overViewCell = row.insertCell();
-                overViewCell.innerText = course.overview;
+                overViewCell.innerText = capitalizeFirstLetter(course.overview);
 
                 const modulesCell = row.insertCell();
-                var stage1Modules = "<h2>stage 1:</h2><ul> ";
+                var stage1Modules = "<h3>Stage 1:</h3><ul> ";
                 var isStage1 = false;
                 course.modules.forEach((item) => {
                     if (item.category === "stage1") {
-                        stage1Modules = stage1Modules + "<li>" + item.name + "</li>";
+                        stage1Modules = stage1Modules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" + "</li>";
                         isStage1 = true;
                     }
                 });
                 if (isStage1) stage1Modules = stage1Modules + "</ul>";
                 else stage1Modules = "";
 
-                var stage2Modules = "<h2>stage 2:</h2><ul> ";
+                var stage2Modules = "<h3>Stage 2:</h3><ul> ";
                 var isStage2 = false;
                 course.modules.forEach((item) => {
-                    if (item.category === "stage2") {
-                        stage2Modules = stage2Modules + "<li>" + item.name + "</li>";
+                    if (item.category === "Stage2") {
+                        stage2Modules = stage2Modules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" + "</li>";
                         isStage2 = true;
                     }
                 });
                 if (isStage2) stage2Modules = stage2Modules + "</ul>";
                 else stage2Modules = "";
 
-                var stage3Modules = "<h2>stage 3:</h2><ul> ";
+                var stage3Modules = "<h3>Stage 3:</h3><ul> ";
                 var isStage3 = false;
                 course.modules.forEach((item) => {
                     if (item.category === "stage3") {
-                        stage3Modules = stage3Modules + "<li>" + item.name + "</li>";
+                        stage3Modules = stage3Modules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" + "</li>";
                         isStage3 = true;
                     }
                 });
                 if (isStage3) stage3Modules = stage3Modules + "</ul>";
                 else stage3Modules = "";
 
-                var placementModules = "<h2>placement:</h2><ul> ";
+                var placementModules = "<h3>Placement:</h3><ul> ";
                 var isPlacement = false;
                 course.modules.forEach((item) => {
                     if (item.category === "placement") {
-                        placementModules = placementModules + "<li>" + item.name + "</li>";
+                        placementModules = placementModules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" +
+                            "</li>";
                         isPlacement = true;
                     }
                 });
                 if (isPlacement) placementModules = placementModules + "</ul>";
                 else placementModules = "";
 
-                var nonPlacementModules = "<h2>non-placement:</h2><ul> ";
+                var nonPlacementModules = "<h3>Non-Placement:</h3><ul> ";
                 var isNonPlacement = false;
                 course.modules.forEach((item) => {
                     if (item.category === "non_placement") {
                         nonPlacementModules =
-                            nonPlacementModules + "<li>" + item.name + "</li>";
+                            nonPlacementModules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" + "</li>";
                         isNonPlacement = true;
                     }
                 });
@@ -205,8 +203,8 @@ function onPageLoad() {
                     "</body></html>";
 
                 const feesCell = row.insertCell();
-                var session1 = "<h2>2023/24:</h2><ul> ";
-                var session2 = "<h2>2022/23:</h2><ul> ";
+                var session1 = "<h3>2023/24:</h3><ul> ";
+                var session2 = "<h3>2022/23:</h3><ul> ";
 
 
 
@@ -304,17 +302,32 @@ function onPageLoad() {
                     }
                 });
 
-                if (session1 === "<h2>2023/24:</h2><ul> ")
+                if (session1 === "<h3>2023/24:</h3><ul> ")
                     session1 = ""
-                if (session2 === "<h2>2022/23:</h2><ul> ")
+                if (session2 === "<h3>2022/23:</h3><ul> ")
                     session2 = ""
                 feesCell.innerHTML =
                     "<html><body>" + session1 + "</ul>" + session2 + "</ul>" + "</body></html>";
                 const requirementsCell = row.insertCell();
-                // requirementsCell.innerHTML = "<html><body>" + course.description + "<h3>English language Requirements</h3><ul><li>" +
-                //     course.entry_requirements.english_language_requirements + "</li></ul></body></html > "
+                requirementsCell.innerHTML = capitalizeFirstLetter(course.entry_requirements)
 
-                requirementsCell.innerHTML = course.entry_requirements
+
+                const actionsCell = row.insertCell();
+                var deleteIcon = document.createElement("img");
+                deleteIcon.src = "delete.png";
+                deleteIcon.onclick = function courseSelected() {
+                    callApiToDeleteCourse(course.Id)
+                };
+
+                var editIcon = document.createElement("img");
+                editIcon.src = "edit.png";
+                editIcon.onclick = function courseSelected() {};
+
+                actionsCell.appendChild(deleteIcon);
+                actionsCell.appendChild(editIcon);
+
+
+
 
 
 
@@ -322,6 +335,26 @@ function onPageLoad() {
         },
         error: function() {
             console.log("Fetch Error");
+        },
+    });
+}
+
+
+function callApiToDeleteCourse(courseId) {
+    $.ajax({
+        url: "http://localhost:3000/deleteCourse.php",
+        type: "POST",
+        data: { course_id: courseId },
+        dataType: "json",
+        success: function(data) {
+            console.log("Course deleted successfully");
+            $('#tb').empty()
+            callApiToGetCoursesData();
+            return true
+        },
+        error: function(xhr, status, error) {
+            document.getElementById("errorMsg").innerHTML = error
+            return false;
         },
     });
 }
@@ -350,7 +383,7 @@ function generateReport() {
             datasets: [{
                 label: '# of Credit Hours',
                 data: creditHours,
-                borderWidth: 1
+                borderWidth: 2
             }]
         },
         options: {
