@@ -18,9 +18,9 @@
         <br />
 
         <h3>Level</h3>
-        <input type="radio" class="radioInput" id="postGradute" name="level" required value="postGradute" />
+        <input type="radio" class="radioInput" id="postGradute" name="level" required value="postGradute" checked style="margin-right: -4%;" />
         <label for="postGradute"> Post Gradute</label>
-        <input type="radio" class="radioInput" id="underGradute" name="level" required value="underGradute" />
+        <input type="radio" class="radioInput" id="underGradute" name="level" required value="underGradute" style="margin-right: -4%;" />
         <label for="underGradute"> Under Gradute</label>
 
         <br />
@@ -96,7 +96,7 @@
         <br />
 
         <h3>Modules</h3>
-        <button class="trigger" onclick="toggleModal()" id="btn-modal" type="button">Add
+        <button class="button" onclick="toggleModal()" id="btn-modal" type="button">Add
                 Module</button>
         <br />
         <br />
@@ -121,7 +121,7 @@
         <br />
 
         <h3>Fees and Funding</h3>
-        <button class="triggerFee" onclick="toggleModalFee()" id="btn-modal" type="button">Add
+        <button class="button" onclick="toggleModalFee()" id="btn-modal" type="button">Add
                 Fees and Funding</button>
         <br />
         <br />
@@ -168,8 +168,7 @@
                 <input required type="text" id="pre_requisites" name="pre-requisites" placeholder="Pre-requisites"><br>
                 <div style="margin:auto; display:block">
 
-                    <button type="submit" class="cross2 button" id="saveItem">Save
-                            Item</button>
+                    <button type="submit" class="cross2 button" id="saveItem">Add</button>
                 </div>
             </form>
         </div>
@@ -225,7 +224,7 @@
                 <input type="number" id="additional_cost" name="additional_cost" required placeholder="Additional cost"><br>
 
 
-                <button type="submit" class="button" id="saveItem">Save Item</button>
+                <button type="submit" class="button" id="saveItem">Save</button>
             </form>
         </div>
     </div>
