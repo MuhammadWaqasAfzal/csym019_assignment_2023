@@ -1,10 +1,11 @@
-document.addEventListener("DOMContentLoaded", onPageLoad); //myLoadEvent);
+// document.addEventListener("DOMContentLoaded", onGenerateReportLoad); //myLoadEvent);
 var coursesList;
 var selectedCoursesList;
 var checkBoxList;
 var chart;
 var modal;
 var span;
+
 
 
 
@@ -40,15 +41,18 @@ function selectAllCourses() {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+// 
 
-
-function onPageLoad() {
-    coursesList = [];
-    selectedCoursesList = [];
-    checkBoxList = [];
-    callApiToGetCoursesData();
+function onGenerateReportLoad() {
+    $("body").addClass("loading"); 
+    setTimeout(() => {  
+        coursesList = [];
+        selectedCoursesList = [];
+        checkBoxList = [];
+        callApiToGetCoursesData();
+    }, 500);
+   
 }
-
 
 function callApiToGetCoursesData() {
     $.ajax({

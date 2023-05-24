@@ -1,8 +1,22 @@
+
+
+document.addEventListener("DOMContentLoaded", onPageLoad());
+
+function onPageLoad() {
+
+    window.localStorage.removeItem('ModuleData')
+    window.localStorage.removeItem('feeData');
+   
+}
+
+
+
+
 function moduleValues(e) {
     e.preventDefault();
     if (window.localStorage.getItem('ModuleData') !== null) {
         var category = document.getElementById('category').value;
-        var name = document.getElementById('name').value;
+        var name = document.getElementById('moduleName').value;
         var credit_hours = document.getElementById('credit_hours').value;
         var code = document.getElementById('code').value;
         var status = document.getElementById('status').value;
@@ -23,9 +37,11 @@ function moduleValues(e) {
         // Re-serialize the array back into a string and store it in localStorage
         window.localStorage.setItem('ModuleData', JSON.stringify(newData));
 
+        console.log(newData);
+
     } else {
         var category = document.getElementById('category').value;
-        var name = document.getElementById('name').value;
+        var name = document.getElementById('moduleName').value;
         var credit_hours = document.getElementById('credit_hours').value;
         var code = document.getElementById('code').value;
         var status = document.getElementById('status').value;
@@ -39,6 +55,7 @@ function moduleValues(e) {
             status: status,
             pre_requisites: pre_requisites,
         }]
+        console.log(moduleData);
         window.localStorage.setItem('ModuleData', JSON.stringify(moduleData));
     }
     // document.getElementById("ModuleForm").reset()
@@ -46,11 +63,9 @@ function moduleValues(e) {
     for (var i = 0; i < inputs.length; i++) {
         inputs[i].value = "";
     }
-    toggleModal()
-    makeModuleList()
-
-    // let element = document.getElementById("addModule")
-    //$('addModuleModal').modal('show');
+    toggleModal();
+    makeModuleList();
+   
 }
 
 function toggleModal() {
@@ -82,6 +97,7 @@ function FEEValues(e) {
     }
     var uk_full_time = document.getElementById('uk_full_time').value;
     var uk_integrated_foundation_year = document.getElementById('uk_integrated_foundation_year').value;
+    var international_full_time = document.getElementById('international_full_time').value;
     var international_integrated_foundation_year = document.getElementById('international_integrated_foundation_year').value;
     var placement_fee = document.getElementById('placement_fee').value;
     var additional_cost = document.getElementById('additional_cost').value;
@@ -92,24 +108,37 @@ function FEEValues(e) {
         uk_part_time: uk_part_time,
         uk_full_time: uk_full_time,
         uk_integrated_foundation_year: uk_integrated_foundation_year,
+        international_full_time:international_full_time,
         international_integrated_foundation_year: international_integrated_foundation_year,
         placement_fee: placement_fee,
         additional_cost: additional_cost,
 
     }
-    window.localStorage.setItem('feeData', JSON.stringify(feeData));
+
+    if(window.localStorage.getItem('feeData')!==null){
+        const newData = JSON.parse(window.localStorage.getItem('feeData'));
+        newData.push(feeData);
+
+        // Re-serialize the array back into a string and store it in localStorage
+        window.localStorage.setItem('feeData', JSON.stringify(newData));
+    }
+   else{
+        const data = [feeData];
+        window.localStorage.setItem('feeData', JSON.stringify(data));
+   }
+  
     toggleModalFee()
     FeeListng()
-        // let element = document.getElementById("addModule")
-        //$('addModuleModal').modal('show');
+     
 }
 
-function onLoadPage() {
-    makeModuleList()
-    FeeListng()
-}
+
 
 function makeModuleList() {
+
+    //checking if user has entered anny module for this course
+    if (window.localStorage.getItem('ModuleData')!=null){
+   
     // Retrieve data from local storage and parse it into an array
     var data = JSON.parse(window.localStorage.getItem('ModuleData'));
 
@@ -136,30 +165,86 @@ function makeModuleList() {
         statusCell.innerHTML = data[i].status;
         pre_requisitesCell.innerHTML = data[i].pre_requisites;
     }
+    return true;
+    }
+    else
+    {
+        return false;
+       
+    }
+}
+
+function showErrorMessage(msg){
+    alert(msg);
 }
 
 function FeeListng() {
+    if(window.localStorage.getItem('feeData')!=null){
     const data = JSON.parse(window.localStorage.getItem('feeData'));
-    var list = document.getElementById("myList");
-    for (var key in data) {
+       console.log(data);
 
-        if (data[key] !== "") {
-            if (key == 'uk_part_time') {
-                for (var inn in data[key]) {
-                    if (data[key][inn] !== "") {
-                        var li = document.createElement("li");
-                        li.textContent = convertToTitleCase(inn) + " : " + data[key][inn];
-                        list.appendChild(li);
-                    }
-                }
-            } else {
+    // Get a reference to the table body
+    var tableBody = document.getElementById('feeTable').getElementsByTagName('tbody')[0];
+    // Clear the existing table body
+    tableBody.innerHTML = '';
 
-                var li = document.createElement("li");
-                li.textContent = convertToTitleCase(key) + " : " + data[key];
-                list.appendChild(li);
-            }
-        }
+        // for (var key in data) {
+
+        //     if (data[key] !== "") {
+        //         if (key == 'uk_part_time') {
+        //             for (var inn in data[key]) {
+        //                 if (data[key][inn] !== "") {
+        //                     var row = tableBody.insertRow();
+        //                     var cell = row.insertCell();
+        //                     cell.innerHTML = convertToTitleCase(inn) + " : " + data[key][inn];
+        //                     //list.appendChild(li);
+        //                 }
+        //             }
+        //         } else {
+
+        //            // var li = document.createElement("li");
+        //             var row = tableBody.insertRow();
+        //             var cell = row.insertCell();
+        //           //  li.textContent = convertToTitleCase(key) + " : " + data[key];
+        //           row.innerHTML = convertToTitleCase(key) + " : " + data[key];
+        //            // list.appendChild(li);
+        //         }
+        //     }
+        // }
+
+          // Iterate over the array and generate table rows and cells
+    for (var i = 0; i < data.length; i++) {
+        console.log("inside fee");
+        var row = tableBody.insertRow();
+        var session = row.insertCell(0);
+        var uk_full_time_fee = row.insertCell(1);
+        var uk_part_time_fee = row.insertCell(2);
+        var uk_international_foundation_year = row.insertCell(3);
+        var international_full_year_fee = row.insertCell(4);
+        var international_integrated_foundation_year_fee = row.insertCell(5);
+        var placement_fee = row.insertCell(6);
+        var additional_cost = row.insertCell(7);
+
+
+
+        session.innerHTML = data[i].session;
+        uk_full_time_fee.innerHTML = data[i].uk_full_time;
+        uk_part_time_fee.innerHTML = data[i].uk_part_time;
+
+        uk_international_foundation_year.innerHTML = data[i].uk_integrated_foundation_year;
+        international_full_year_fee.innerHTML = data[i].international_full_year_fee;
+
+        international_integrated_foundation_year_fee.innerHTML = data[i].international_integrated_foundation_year;
+
+        placement_fee.innerHTML = data[i].placement_fee;
+        additional_cost.innerHTML = data[i].additional_cost;
     }
+        return true;
+    }
+    else{
+        return false;
+    }
+    
 }
 
 function convertToTitleCase(str) {
@@ -174,22 +259,39 @@ function convertToTitleCase(str) {
 
 function FormSubmit(event) {
     event.preventDefault()
+
+    if(makeModuleList()){
+       
+    if(FeeListng()){
+      
+
     var title = document.getElementById('title').value
     var level = document.querySelector('input[name="level"]:checked').value
     var full_time = document.getElementById('full_time').value
     var full_time_with_placement = document.getElementById('full_time_with_placement').value
     var full_time_foundation = document.getElementById('full_time_foundation').value
     var part_time = document.getElementById('part_time').value
-    var starting = document.getElementById('starting').value
+
+
+    // var checkboxes = document.getElementsByName('location[]');
+
+    var courseStartCheckBox = document.getElementsByName('courseStart');
+    var courseStart = [];
+    for (var i=0, n=courseStartCheckBox.length;i<n;i++) 
+    {
+        if (courseStartCheckBox[i].checked) 
+        {
+            courseStart.push(  courseStartCheckBox[i].value);
+        }
+    }
+
     var location = document.getElementById('location').value
     var overview = document.getElementById('overview').value
     var entryRequirements = document.getElementById('entryRequirements').value
-
-
     var moduleData = JSON.parse(window.localStorage.getItem('ModuleData'))
     var feeData = JSON.parse(window.localStorage.getItem('feeData'))
 
-
+    console.log(courseStart);
     var courseData = {
         "title": title,
         "level": level,
@@ -198,29 +300,58 @@ function FormSubmit(event) {
         "full_time_foundation_duration": full_time_foundation,
         "part_time_duration": part_time,
         "location": location,
-        "start": starting,
+        "start": courseStart,
         "overview": overview,
         "modules": moduleData,
         "fees": feeData,
         "entryRequirements": entryRequirements
     };
 
+    console.log(courseData);
+     // $.ajax({
+    //     url: "http://localhost:3000/addCourse.php",
+    //     type: "POST",
+    //     data: courseData,
+    //     dataType: "html",
+    //     success: function(data) {
+    //         console.log("course added successfully");
+    //     },
+    //     error: function(xhr, status, error) {
+    //         console.log(error);
+    //     },
+    // });
+        clearPageData();
+    }
+    else{
+      showErrorMessage("Fee Information is required for adding courses")
+    }
+
+    }
+    else{
+     showErrorMessage("Modules are required for adding courses")
+    }
+   
 
 
-
-    $.ajax({
-        url: "http://localhost:3000/addCourse.php",
-        type: "POST",
-        data: courseData,
-        dataType: "html",
-        success: function(data) {
-            console.log("course added successfully");
-        },
-        error: function(xhr, status, error) {
-            console.log(error);
-        },
-    });
+}
 
 
+function clearPageData(){
+    window.localStorage.removeItem('ModuleData')
+    window.localStorage.removeItem('feeData');
 
+
+    //clearing module table
+    var moduleTable = document.getElementById('moduletable');
+    var rowCount = moduleTable.rows.length;
+    for (var i = rowCount - 1; i > 0; i--) {
+        moduleTable.deleteRow(i);
+    }
+
+    //clearing fee table
+    var feeTable = document.getElementById('feeTable');
+    var rowCount = feeTable.rows.length;
+    for (var i = rowCount - 1; i > 0; i--) {
+        feeTable.deleteRow(i);
+    }
 }

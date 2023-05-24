@@ -1,4 +1,28 @@
-function loadPage(fileName) {
+
+
+function onPageLoad() {
+    loadPage("generateReport.html");
+    //loadPage("addCourse.html")
+}
+
+document.addEventListener("DOMContentLoaded", onPageLoad); //myLoadEvent);
+
+
+
+function onPageLoad() {
+    loadPage("addCourse.html");
+
+    // loadPage("generateReport.html");
+	// onGenerateReportLoad();
+    // setUserName();
+
+ }
+
+ function setUserName(){
+    document.getElementById("name").innerHTML = localStorage.getItem("firstName") + " "+localStorage.getItem("lastName");
+ }
+ 
+ function loadPage(fileName) {
     let xhttp;
     let element = document.getElementById("main")
 
@@ -17,9 +41,8 @@ function loadPage(fileName) {
     }
 }
 
-function onPageLoad() {
-    loadPage("generateReport.html");
-    //loadPage("addCourse.html")
-}
 
-document.addEventListener("DOMContentLoaded", onPageLoad); //myLoadEvent);
+
+ function logout(){
+    window.location.replace("login.html");
+ }

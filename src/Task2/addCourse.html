@@ -70,16 +70,21 @@
         <br />
         <br />
 
+        <!-- course start -->
         <h3>Course Start</h3>
-        <label for="starting">Starting:</label>
-        <select name="starting" id="starting">
-                <option value="February">February</option>
-                <option value="April">April</option>
-                <option value="September">September</option>
-            </select>
+        <input type="checkbox" class="radioInput" id="february" name="courseStart"  value="February" checked style="margin-right: -4%;" />
+        <label for="february"> February</label>
+        <br />
+        <input type="checkbox" class="radioInput" id="april" name="courseStart"  value="April" style="margin-right: -4%;" />
+        <label for="april"> April</label>
+        <br />
+        <input type="checkbox" class="radioInput" id="september" name="courseStart"  value="September" style="margin-right: -4%;" />
+        <label for="september"> September</label>
+        <br />
 
         <br />
         <br />
+
 
         <h3>Course Location</h3>
         <label for="location">Location:</label>
@@ -92,7 +97,7 @@
         <br />
 
         <h3>Course Overview</h3>
-        <textarea id="overview" rows="4" required cols="50" name="overview" form="newCourseForm" placeholder="Describe course here..."></textarea>
+        <textarea id="overview" rows="4" required cols="50" name="overview" form="newCourseForm" placeholder="Describe course here...">SSD</textarea>
         <br />
 
         <h3>Modules</h3>
@@ -125,8 +130,28 @@
                 Fees and Funding</button>
         <br />
         <br />
-        <ul id="myList"></ul>
+        <table id="feeTable">
+        <thead>
+            <tr>
+                <th>Session</th>
+                <th>Uk Full Time Fee</th>
+                <th>Uk Part Time Fee</th>
+                <th>Uk International Foundation Year Fee</th>
+                <th>International Full Year Fee</th>
+                <th>Pre International Integrated Foundation Year Fee</th>
+                <th>Placement Fee</th>
+                <th>Additional Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+    </table>
         <br />
+        <br />
+        <br />
+        <br />
+
 
         <h3>Enter Requirements</h3>
         <textarea id="entryRequirements" rows="4" required cols="50" name="entryRequirmentd" form="newCourseForm" placeholder="Enter entry requirements for this course here...">asda</textarea>
@@ -152,7 +177,7 @@
                         </select>
                 </div>
                 <label for="name">Name:</label>
-                <input type="text" required id="name" name="name" placeholder="Name"><br>
+                <input required type="text"  id="moduleName" name="name" placeholder="Name"><br>
                 <label for="credit_hours">Credit Hours:</label>
                 <input required type="number" id="credit_hours" name="credit_hours" placeholder="Enter Credit Hours"><br>
                 <label for="code">Code:</label>
@@ -165,7 +190,7 @@
                         </select>
                 </div>
                 <label for="pre-requisites">Pre-requisites:</label>
-                <input required type="text" id="pre_requisites" name="pre-requisites" placeholder="Pre-requisites"><br>
+                <input  type="text" id="pre_requisites" name="pre-requisites" placeholder="Pre-requisites"><br>
                 <div style="margin:auto; display:block">
 
                     <button type="submit" class="cross2 button" id="saveItem">Add</button>
@@ -211,10 +236,13 @@
                     <label for="per_credit_hour">Per Credit Hour:</label>
                     <input type="number" id="per_credit_hour" name="per_credit_hour" placeholder="Enter Per Credit Hour"><br>
                 </div>
+                
                 <label for="uk_integrated_foundation_year">UK integrated foundation year:</label>
                 <input type="number" id="uk_integrated_foundation_year" name="uk_integrated_foundation_year" required placeholder="UK integrated foundation year"><br>
+               
                 <label for="international_full_time">International full time:</label>
                 <input type="number" id="international_full_time" name="international_full_time" required placeholder="International full time"><br>
+               
                 <label for="international_integrated_foundation_year">International integrated foundation
                         year:</label>
                 <input type="number" id="international_integrated_foundation_year" name="international_integrated_foundation_year" required placeholder="International integrated foundation year"><br>

@@ -168,3 +168,31 @@ textarea {
     background: #3e3e3e;
     color: white;
 }
+
+#feeTable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#feeTable td,
+#feeTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#feeTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#feeTable tr:hover {
+    background-color: #ddd;
+}
+
+#feeTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background: #3e3e3e;
+    color: white;
+}
