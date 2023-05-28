@@ -12,7 +12,13 @@
 
 <body>
 
-    <h1>Courses List</h1>
+    <div class="overlay"></div>
+
+    <div class="main">
+
+    </div>
+
+    <h1 id="heading">Courses List</h1>
 
     <table id="courses">
         <thead>
@@ -39,10 +45,15 @@
         </tbody>
     </table>
 
+    <div id="floatingButton">
+        <button class="button" onclick="openModal()">Generate Report</button>
+    </div>
+
 
 
     <!-- <canvas id="chart"></canvas> -->
-    <button class="button" id="myBtn" onclick="openModal()">Generate Report</button>
+        <button class="button" id="myBtn" onclick="openModal()">Generate Report</button>
+   
 
 
     <div id="myModal" class="modal">

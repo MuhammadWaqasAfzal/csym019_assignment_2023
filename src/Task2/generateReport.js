@@ -1,4 +1,4 @@
-// document.addEventListener("DOMContentLoaded", onGenerateReportLoad); //myLoadEvent);
+//document.addEventListener("DOMContentLoaded", onGenerateReportLoad); //myLoadEvent);
 var coursesList;
 var selectedCoursesList;
 var checkBoxList;
@@ -7,6 +7,18 @@ var modal;
 var span;
 
 
+
+function onGenerateReportLoad() {
+    $("body").addClass("loading"); 
+    setTimeout(() => {  
+        coursesList = [];
+        selectedCoursesList = [];
+        checkBoxList = [];
+        callApiToGetCoursesData();
+        document.getElementById('floatingButton').style.display="none";
+    }, 500);
+   
+}
 
 
 
@@ -17,23 +29,29 @@ function sortCoursesList(a, b) {
 }
 
 function selectAllCourses() {
+   
+    selectedCoursesList = []
     let checkbox = document.getElementById('checkAllCourses');
+   
+
     if (!checkbox.checked) {
+        document.getElementById('floatingButton').style.display="block";
+        checkbox.checked = true;
         coursesList.forEach((course, index) => {
             selectedCoursesList.push(index);
         });
         checkBoxList.forEach((checkBox, index) => {
-            selectedCoursesList.push(index);
             checkBox.checked = true;
         });
-        checkbox.checked = true;
+       
     } else {
-        selectedCoursesList = []
+         document.getElementById('floatingButton').style.display="none";
         checkbox.checked = false;
         checkBoxList.forEach((checkBox) => {
             checkBox.checked = false;
         });
     }
+    console.log(selectedCoursesList);
 
 }
 
@@ -43,29 +61,25 @@ function capitalizeFirstLetter(string) {
 }
 // 
 
-function onGenerateReportLoad() {
-    $("body").addClass("loading"); 
-    setTimeout(() => {  
-        coursesList = [];
-        selectedCoursesList = [];
-        checkBoxList = [];
-        callApiToGetCoursesData();
-    }, 500);
-   
-}
 
 function callApiToGetCoursesData() {
+    
+    $("body").addClass("loading"); 
     $.ajax({
         url: "http://localhost:3000/allCourses.php",
         type: "GET",
         dataType: "json",
         success: function(data) {
+            $("body").removeClass("loading"); 
             let checkbox = document.getElementById('checkAllCourses');
             checkbox.checked = false;
-            data.data.sort(sortCoursesList);
+           
+            coursesList=[];
             coursesList = data.data;
+            coursesList.sort(sortCoursesList);
+            console.log(coursesList);
             const tableBody = document.querySelector("#courses tbody");
-            data.data.forEach((course, index) => {
+            coursesList.forEach((course, index) => {
                 const row = tableBody.insertRow();
 
                 //creating cell check box
@@ -74,7 +88,25 @@ function callApiToGetCoursesData() {
                 checkbox.type = "checkbox";
                 checkBoxList.push(checkbox);
                 checkbox.onclick = function courseSelected() {
-                    selectedCoursesList.push(index)
+                    if (checkbox.checked) {
+                        selectedCoursesList.push(index)
+                    }
+                    else
+                    {
+                        var valueToRemove = selectedCoursesList.indexOf(index);
+                        if (valueToRemove !== -1) {
+                            selectedCoursesList.splice(valueToRemove, 1);
+                        }
+                    }
+                    if(selectedCoursesList.length>0)
+                    {
+                        document.getElementById('floatingButton').style.display="block";
+                    }
+                    else{
+                        document.getElementById('floatingButton').style.display="none";
+                    }
+                    console.log(selectedCoursesList);
+
                 };
                 checkBoxCell.appendChild(checkbox);
 
@@ -188,7 +220,7 @@ function callApiToGetCoursesData() {
                 var nonPlacementModules = "<h3>Non-Placement:</h3><ul> ";
                 var isNonPlacement = false;
                 course.modules.forEach((item) => {
-                    if (item.category === "non_placement") {
+                    if (item.category === "non-placement") {
                         nonPlacementModules =
                             nonPlacementModules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" + "</li>";
                         isNonPlacement = true;
@@ -318,13 +350,13 @@ function callApiToGetCoursesData() {
 
                 const actionsCell = row.insertCell();
                 var deleteIcon = document.createElement("img");
-                deleteIcon.src = "delete.png";
+                deleteIcon.src = "../Task2/icons/delete.png";
                 deleteIcon.onclick = function courseSelected() {
                     callApiToDeleteCourse(course.Id)
                 };
 
                 var editIcon = document.createElement("img");
-                editIcon.src = "edit.png";
+                editIcon.src = "../Task2/icons/edit.png";
                 editIcon.onclick = function courseSelected() {};
 
                 actionsCell.appendChild(deleteIcon);
@@ -339,24 +371,28 @@ function callApiToGetCoursesData() {
         },
         error: function() {
             console.log("Fetch Error");
+            $("body").removeClass("loading"); 
         },
     });
 }
 
 
 function callApiToDeleteCourse(courseId) {
+    $("body").removeClass("loading"); 
     $.ajax({
         url: "http://localhost:3000/deleteCourse.php",
         type: "POST",
         data: { course_id: courseId },
         dataType: "json",
         success: function(data) {
+              $("body").removeClass("loading"); 
             console.log("Course deleted successfully");
             $('#tb').empty()
             callApiToGetCoursesData();
             return true
         },
         error: function(xhr, status, error) {
+            $("body").removeClass("loading"); 
             document.getElementById("errorMsg").innerHTML = error
             return false;
         },
@@ -367,6 +403,7 @@ function callApiToDeleteCourse(courseId) {
 function generateReport() {
     var courseTitles = [];
     var creditHours = [];
+    console.log(selectedCoursesList);
     selectedCoursesList.forEach((value) => {
         const course = coursesList[value];
         course.modules.forEach((module) => {

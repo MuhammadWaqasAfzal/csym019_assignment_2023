@@ -8,6 +8,8 @@
 </head>
 
 <body onload="onLoadPage()">
+    <div class="overlay"></div>
+
     <h1>New Course Entry Form</h1>
     <form id="newCourseForm" onsubmit="FormSubmit(event)">
         <h3>Course Title</h3>
@@ -231,8 +233,8 @@
                     <input type="number" id="fees" name="fees" placeholder="Enter Fees"><br>
                     <label for="year">Year:</label>
                     <input type="number" id="year" name="year" placeholder="Enter year"><br>
-                    <label for="credit_hours">Credit Hours:</label>
-                    <input type="number" id="credit_hours" name="credit_hours" placeholder="Enter Credit Hours"><br>
+                    <label for="credit_hours_per_hour">Credit Hours:</label>
+                    <input type="number" id="credit_hours_per_hour" name="credit_hours" placeholder="Enter Credit Hours"><br>
                     <label for="per_credit_hour">Per Credit Hour:</label>
                     <input type="number" id="per_credit_hour" name="per_credit_hour" placeholder="Enter Per Credit Hour"><br>
                 </div>
@@ -245,7 +247,7 @@
                
                 <label for="international_integrated_foundation_year">International integrated foundation
                         year:</label>
-                <input type="number" id="international_integrated_foundation_year" name="international_integrated_foundation_year" required placeholder="International integrated foundation year"><br>
+                <input type="number" id="international_integrated_foundation_year" name="international_integrated_foundation_year"  placeholder="International integrated foundation year"><br>
                 <label for="placement_fee">Placement fee:</label>
                 <input type="number" id="placement_fee" name="placement_fee" required placeholder="Placement fee"><br>
                 <label for="additional_cost">Additional cost:</label>

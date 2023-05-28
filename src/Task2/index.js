@@ -10,16 +10,17 @@ document.addEventListener("DOMContentLoaded", onPageLoad); //myLoadEvent);
 
 
 function onPageLoad() {
-    loadPage("addCourse.html");
+   // loadPage("addCourse.html");
 
-    // loadPage("generateReport.html");
-	// onGenerateReportLoad();
-    // setUserName();
+    loadPage("generateReport.html");
+	onGenerateReportLoad();
+     setUserName();
 
  }
 
  function setUserName(){
-    document.getElementById("name").innerHTML = localStorage.getItem("firstName") + " "+localStorage.getItem("lastName");
+    console.log(localStorage.getItem("userName")+ " name");
+    document.getElementById("name").innerHTML = localStorage.getItem("userName");
  }
  
  function loadPage(fileName) {

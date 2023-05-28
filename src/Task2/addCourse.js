@@ -92,7 +92,7 @@ function FEEValues(e) {
     var uk_part_time = {
         fees: document.getElementById('fees').value,
         year: document.getElementById('year').value,
-        credit_hours: document.getElementById('credit_hours').value,
+        credit_hours: document.getElementById('credit_hours_per_hour').value,
         per_credit_hour: document.getElementById('per_credit_hour').value
     }
     var uk_full_time = document.getElementById('uk_full_time').value;
@@ -214,7 +214,6 @@ function FeeListng() {
 
           // Iterate over the array and generate table rows and cells
     for (var i = 0; i < data.length; i++) {
-        console.log("inside fee");
         var row = tableBody.insertRow();
         var session = row.insertCell(0);
         var uk_full_time_fee = row.insertCell(1);
@@ -229,7 +228,18 @@ function FeeListng() {
 
         session.innerHTML = data[i].session;
         uk_full_time_fee.innerHTML = data[i].uk_full_time;
-        uk_part_time_fee.innerHTML = data[i].uk_part_time;
+
+
+        // uk_part_time_fee.innerHTML = data[i].uk_part_time.fees + " " + 
+        //                              data[i].uk_part_time.year + " "+
+        //                              data[i].uk_part_time.credit_hours + " "+
+        //                              data[i].uk_part_time.per_credit_hour + " ";
+                                     
+
+        uk_part_time_fee.innerHTML = data[i].uk_part_time.fees;
+                                  
+
+       
 
         uk_international_foundation_year.innerHTML = data[i].uk_integrated_foundation_year;
         international_full_year_fee.innerHTML = data[i].international_full_year_fee;
@@ -260,7 +270,7 @@ function convertToTitleCase(str) {
 function FormSubmit(event) {
     event.preventDefault()
 
-    if(makeModuleList()){
+    // if(makeModuleList()){
        
     if(FeeListng()){
       
@@ -291,7 +301,6 @@ function FormSubmit(event) {
     var moduleData = JSON.parse(window.localStorage.getItem('ModuleData'))
     var feeData = JSON.parse(window.localStorage.getItem('feeData'))
 
-    console.log(courseStart);
     var courseData = {
         "title": title,
         "level": level,
@@ -308,28 +317,28 @@ function FormSubmit(event) {
     };
 
     console.log(courseData);
-     // $.ajax({
-    //     url: "http://localhost:3000/addCourse.php",
-    //     type: "POST",
-    //     data: courseData,
-    //     dataType: "html",
-    //     success: function(data) {
-    //         console.log("course added successfully");
-    //     },
-    //     error: function(xhr, status, error) {
-    //         console.log(error);
-    //     },
-    // });
+     $.ajax({
+        url: "http://localhost:3000/addCourse.php",
+        type: "POST",
+        data: courseData,
+        dataType: "html",
+        success: function(data) {
+            console.log("course added successfully");
+        },
+        error: function(xhr, status, error) {
+            console.log(error);
+        },
+    });
         clearPageData();
     }
     else{
       showErrorMessage("Fee Information is required for adding courses")
     }
 
-    }
-    else{
-     showErrorMessage("Modules are required for adding courses")
-    }
+    // }
+    // else{
+    //  showErrorMessage("Modules are required for adding courses")
+    // }
    
 
 
