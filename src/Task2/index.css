@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #fff;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -16,6 +15,7 @@
     align-items: center;
     line-height: 5rem;
 }
+
 
 .content {
     padding-left: 5rem;
@@ -55,12 +55,25 @@ input ,select{
   
 
 
-.left h4{
+/* .left h4{
     font-size: 2rem;
     cursor: pointer;
 }
 
 .left h4:hover {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #FFCC00;
+    
+} */
+
+#name{
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+#name:hover {
     font-size: 2.5rem;
     cursor: pointer;
     color: #FFCC00;
@@ -125,7 +138,7 @@ input ,select{
     display: block;
 }
 
-.left h4{
+/* .left h4{
     font-size: 2rem;
     cursor: pointer;
 }
@@ -135,7 +148,7 @@ input ,select{
     cursor: pointer;
     color: #FFCC00;
     
-}
+} */
 
 @media screen and (max-width:805px) {
     .list {

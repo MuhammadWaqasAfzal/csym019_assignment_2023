@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", onPageLoad); //myLoadEvent);
 
 
 function onPageLoad() {
-   // loadPage("addCourse.html");
+    //loadPage("addCourse.html");
 
     loadPage("generateReport.html");
 	onGenerateReportLoad();

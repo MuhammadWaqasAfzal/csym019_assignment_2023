@@ -16,6 +16,7 @@ function onGenerateReportLoad() {
         checkBoxList = [];
         callApiToGetCoursesData();
         document.getElementById('floatingButton').style.display="none";
+        document.getElementById('floatingButtonDelete').style.display="none";
     }, 500);
    
 }
@@ -36,6 +37,7 @@ function selectAllCourses() {
 
     if (!checkbox.checked) {
         document.getElementById('floatingButton').style.display="block";
+        document.getElementById('floatingButtonDelete').style.display="block";
         checkbox.checked = true;
         coursesList.forEach((course, index) => {
             selectedCoursesList.push(index);
@@ -46,6 +48,7 @@ function selectAllCourses() {
        
     } else {
          document.getElementById('floatingButton').style.display="none";
+         document.getElementById('floatingButtonDelete').style.display="none";
         checkbox.checked = false;
         checkBoxList.forEach((checkBox) => {
             checkBox.checked = false;
@@ -101,13 +104,17 @@ function callApiToGetCoursesData() {
                     if(selectedCoursesList.length>0)
                     {
                         document.getElementById('floatingButton').style.display="block";
+                        document.getElementById('floatingButtonDelete').style.display="block";
+
                     }
                     else{
                         document.getElementById('floatingButton').style.display="none";
+                        document.getElementById('floatingButtonDelete').style.display="none";
                     }
                     console.log(selectedCoursesList);
 
                 };
+                
                 checkBoxCell.appendChild(checkbox);
 
 
@@ -127,17 +134,17 @@ function callApiToGetCoursesData() {
                 if (course.full_time_duration > 1) year = " years\n";
                 var duration =
                     "Full Time: " + course.full_time_duration + year;
-                if (course.full_time_with_placement_duration != null) {
+                if (course.full_time_with_placement_duration != null && course.full_time_with_placement_duration != "null") {
                     if (course.full_time_with_placement_duration > 1)
                         year = " years\n";
                     else year = " year\n";
                     duration =
                         duration +
                         "Full Time Placement: " +
-                        course.coursefull_time_with_placement_duration +
+                        course.full_time_with_placement_duration +
                         " years\n";
                 }
-                if (course.full_time_foundation_duration != null) {
+                if (course.full_time_foundation_duration != null && course.full_time_foundation_duration != "null") {
                     if (course.full_time_foundation_duration > 1)
                         year = " years\n";
                     else year = " year\n";
@@ -159,10 +166,6 @@ function callApiToGetCoursesData() {
                 durationCell.innerText = duration;
 
                 const startingCell = row.insertCell();
-                var starting = course.start;
-                //  course.starting.forEach((item) => {
-                //      starting = starting + item + "\n";
-                //  });
                 startingCell.innerText = capitalizeFirstLetter(course.start);
 
                 const locationCell = row.insertCell();
@@ -175,7 +178,7 @@ function callApiToGetCoursesData() {
                 var stage1Modules = "<h3>Stage 1:</h3><ul> ";
                 var isStage1 = false;
                 course.modules.forEach((item) => {
-                    if (item.category === "stage1") {
+                    if (capitalizeFirstLetter(item.category) === "Stage1") {
                         stage1Modules = stage1Modules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" + "</li>";
                         isStage1 = true;
                     }
@@ -186,7 +189,7 @@ function callApiToGetCoursesData() {
                 var stage2Modules = "<h3>Stage 2:</h3><ul> ";
                 var isStage2 = false;
                 course.modules.forEach((item) => {
-                    if (item.category === "Stage2") {
+                    if (capitalizeFirstLetter(item.category) === "Stage2") {
                         stage2Modules = stage2Modules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" + "</li>";
                         isStage2 = true;
                     }
@@ -197,7 +200,7 @@ function callApiToGetCoursesData() {
                 var stage3Modules = "<h3>Stage 3:</h3><ul> ";
                 var isStage3 = false;
                 course.modules.forEach((item) => {
-                    if (item.category === "stage3") {
+                    if (capitalizeFirstLetter(item.category) === "Stage3") {
                         stage3Modules = stage3Modules + "<li>" + item.name + " (" + item.credit_hours + " credit hours)" + "</li>";
                         isStage3 = true;
                     }
@@ -352,6 +355,7 @@ function callApiToGetCoursesData() {
                 var deleteIcon = document.createElement("img");
                 deleteIcon.src = "../Task2/icons/delete.png";
                 deleteIcon.onclick = function courseSelected() {
+                    $("body").addClass("loading"); 
                     callApiToDeleteCourse(course.Id)
                 };
 
@@ -362,17 +366,20 @@ function callApiToGetCoursesData() {
                 actionsCell.appendChild(deleteIcon);
                 actionsCell.appendChild(editIcon);
 
-
-
-
-
-
             });
         },
         error: function() {
             console.log("Fetch Error");
             $("body").removeClass("loading"); 
         },
+    });
+}
+
+function deleteCourses(){
+    $("body").addClass("loading"); 
+    selectedCoursesList.forEach((value) => {
+        const course = coursesList[value];
+        callApiToDeleteCourse(course.Id);
     });
 }
 
@@ -413,28 +420,52 @@ function generateReport() {
         });
 
     });
-    console.log(courseTitles);
-    console.log(creditHours);
+
     const ctx = document.getElementById('chart');
 
-    chart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: courseTitles,
-            datasets: [{
-                label: '# of Credit Hours',
-                data: creditHours,
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+    if(selectedCoursesList.length>1){
+        chart = new Chart(ctx, {
+            label: 'Modules',
+            type: 'bar',
+            data: {
+                labels: courseTitles,
+                datasets: [{
+                    label: '# of Credit Hours',
+                    data: creditHours,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
-            }
-        }
-    });
+            },
+            borderWidth: 2
+        });
+    }else{
+        chart = new Chart(ctx, {
+            label: 'Modules',
+            type: 'pie',
+            data: {
+                labels: courseTitles,
+                datasets: [{
+                    label: '# of Credit Hours',
+                    data: creditHours,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+            borderWidth: 2
+        });
+    }
 
 
 

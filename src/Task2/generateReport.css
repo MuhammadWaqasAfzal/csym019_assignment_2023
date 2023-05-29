@@ -1,10 +1,11 @@
 body {
+    
     background-color: #ffffff;
 }
 
 #heading{
     text-align: center;
-    color: rgb(95, 90, 62);
+    color: #2A3749;
     padding: 1rem;
     font:bolder;
     font-family: 'Courier New', Courier, monospace;
@@ -63,6 +64,37 @@ li {
     margin: 20px;
   }
 
+  #floatingButtonDelete {
+    display: none;
+    position: fixed;
+    bottom: -4px;
+    left: 10px;
+    margin: 20px;
+  }
+
+  .deleteButton:hover{
+    color: #020202;
+    background-color: #ff0000;
+    font-size: 25px;
+  }
+  .deleteButton {
+    text-align: center;
+    background: #2A3749;
+    color: #FFFFFF;
+    font-size: 15px;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: cursive;
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+  
+}
 
 .button {
     text-align: center;

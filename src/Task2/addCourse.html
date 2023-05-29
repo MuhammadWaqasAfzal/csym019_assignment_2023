@@ -10,7 +10,7 @@
 <body onload="onLoadPage()">
     <div class="overlay"></div>
 
-    <h1>New Course Entry Form</h1>
+    <h1 id="heading">New Course Entry Form</h1>
     <form id="newCourseForm" onsubmit="FormSubmit(event)">
         <h3>Course Title</h3>
         <label for="title">Title:</label>
@@ -32,7 +32,6 @@
         <!-- full_time -->
         <label for="full_time">Full Time Duration:</label>
         <select name=" full_time" id="full_time" required>
-                <option value="select">Select Year</option>
                 <option value="1">1 Year</option>
                 <option value="2">2 Year</option>
                 <option value="3">3 Year</option>
@@ -42,7 +41,6 @@
         <!-- full_time_with_placement -->
         <label for="full_time_with_placement">Full Time With Placement:</label>
         <select name="full_time_with_placement" id="full_time_with_placement" required>
-                <option value="select">Select Year</option>
                 <option value="1">1 Year</option>
                 <option value="2">2 Year</option>
                 <option value="3">3 Year</option>
@@ -52,7 +50,6 @@
         <!-- full_time_foundation -->
         <label for="full_time_foundation">Full Time Foundation:</label>
         <select name="full_time_foundation" id="full_time_foundation" required>
-                <option value="select">Select Year</option>
                 <option value="1">1 Year</option>
                 <option value="2">2 Year</option>
                 <option value="3">3 Year</option>
@@ -62,7 +59,6 @@
         <!-- part_time -->
         <label for="part_time">Part Time:</label>
         <select name="part_time" id="part_time" required>
-                <option value="select">Select Year</option>
                 <option value="1">1 Year</option>
                 <option value="2">2 Year</option>
                 <option value="3">3 Year</option>
@@ -90,7 +86,7 @@
 
         <h3>Course Location</h3>
         <label for="location">Location:</label>
-        <select name="location" id="location">
+            <select name="location" id="location">
                 <option value="Waterside">Waterside</option>
                 <option value="April">April</option>
             </select>
@@ -100,6 +96,7 @@
 
         <h3>Course Overview</h3>
         <textarea id="overview" rows="4" required cols="50" name="overview" form="newCourseForm" placeholder="Describe course here...">SSD</textarea>
+        <br />
         <br />
 
         <h3>Modules</h3>
@@ -138,6 +135,9 @@
                 <th>Session</th>
                 <th>Uk Full Time Fee</th>
                 <th>Uk Part Time Fee</th>
+                <th>Uk Part Time Per Credit Hour</th>
+                <th>Uk Part Time Credit Hours</th>
+                <th>Uk Part Time Year</th>
                 <th>Uk International Foundation Year Fee</th>
                 <th>International Full Year Fee</th>
                 <th>Pre International Integrated Foundation Year Fee</th>
@@ -166,7 +166,7 @@
     <div id="addModuleModal" class="modal">
         <div class="modal-content">
             <span class="close-button cross" onclick="toggleModal()">×</span>
-            <h2>Add New Item</h2>
+            <h3>Add Module Information</h3>
             <form id="ModuleForm" action="" method="post" onsubmit="moduleValues(event)">
                 <div class="select-wrapper">
                     <label for="category">Category:</label>
@@ -204,7 +204,7 @@
     <div id="addModuleModal" class="modalFee">
         <div class="modal-contentFee">
             <span class="close-buttonFee" onclick="toggleModalFee()">×</span>
-            <h2>Add New Item</h2>
+            <h3>Add Fee Information</h3>
             <form id="ModuleForm" action="" method="post" onsubmit="FEEValues(event)">
                 <div class="select-wrapper">
                     <label for="session">Session:</label>
@@ -213,9 +213,9 @@
                             <option value="23/24">23/24</option>
                         </select>
                 </div>
-                <p>Select an option:</p>
+                <!-- <p>Select an option:</p> -->
 
-                <div>
+                <!-- <div>
                     <input onclick="showfull()" type="radio" class="radioInput" id="hide" name="example" value="hide" />
                     <label for="hide">UK Full Time:</label>
                 </div>
@@ -223,19 +223,19 @@
                 <div>
                     <input onclick="showpart()" type="radio" class="radioInput" id="show" name="example" value="show" />
                     <label for="show">UK Part Time:</label>
-                </div>
-                <div id="ukFull" class="hide">
-                    <label for="uk_full_time">UK Full Time:</label>
+                </div> -->
+                <div id="ukFull">
+                    <label for="uk_full_time">UK Full Time Fees:</label>
                     <input type="number" id="uk_full_time" name="uk_full_time" placeholder="Enter Fee"><br>
                 </div>
-                <div id="UkPart" class="hide">
-                    <label for="fees">Fees:</label>
+                <div id="UkPart" >
+                    <label for="fees">Uk Part Time Fees:</label>
                     <input type="number" id="fees" name="fees" placeholder="Enter Fees"><br>
-                    <label for="year">Year:</label>
+                    <label for="year">Part Time Years:</label>
                     <input type="number" id="year" name="year" placeholder="Enter year"><br>
-                    <label for="credit_hours_per_hour">Credit Hours:</label>
+                    <label for="credit_hours_per_hour">Total Credit Hours:</label>
                     <input type="number" id="credit_hours_per_hour" name="credit_hours" placeholder="Enter Credit Hours"><br>
-                    <label for="per_credit_hour">Per Credit Hour:</label>
+                    <label for="per_credit_hour">Per Credit Hour Fee:</label>
                     <input type="number" id="per_credit_hour" name="per_credit_hour" placeholder="Enter Per Credit Hour"><br>
                 </div>
                 

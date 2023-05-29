@@ -89,12 +89,20 @@ function showpart() {
 function FEEValues(e) {
     e.preventDefault();
     var session = document.getElementById('session').value;
-    var uk_part_time = {
-        fees: document.getElementById('fees').value,
-        year: document.getElementById('year').value,
-        credit_hours: document.getElementById('credit_hours_per_hour').value,
-        per_credit_hour: document.getElementById('per_credit_hour').value
-    }
+    // var uk_part_time = {
+    //     fees: document.getElementById('fees').value,
+    //     year: document.getElementById('year').value,
+    //     credit_hours: document.getElementById('credit_hours_per_hour').value,
+    //     per_credit_hour: document.getElementById('per_credit_hour').value
+    // }
+
+    var uk_part_time_fee = document.getElementById('fees').value;
+    var uk_part_time_year = document.getElementById('year').value;
+    var uk_part_time_total_credit_hours = document.getElementById('credit_hours_per_hour').value;
+    var uk_part_time_per_credit_hour = document.getElementById('per_credit_hour').value;
+
+
+
     var uk_full_time = document.getElementById('uk_full_time').value;
     var uk_integrated_foundation_year = document.getElementById('uk_integrated_foundation_year').value;
     var international_full_time = document.getElementById('international_full_time').value;
@@ -105,7 +113,10 @@ function FEEValues(e) {
 
     const feeData = {
         session: session,
-        uk_part_time: uk_part_time,
+        uk_part_time_fee: uk_part_time_fee,
+        uk_part_time_year: uk_part_time_year,
+        uk_part_time_total_credit_hours: uk_part_time_total_credit_hours,
+        uk_part_time_per_credit_hour: uk_part_time_per_credit_hour,
         uk_full_time: uk_full_time,
         uk_integrated_foundation_year: uk_integrated_foundation_year,
         international_full_time:international_full_time,
@@ -125,7 +136,7 @@ function FEEValues(e) {
    else{
         const data = [feeData];
         window.localStorage.setItem('feeData', JSON.stringify(data));
-   }
+    }
   
     toggleModalFee()
     FeeListng()
@@ -218,11 +229,14 @@ function FeeListng() {
         var session = row.insertCell(0);
         var uk_full_time_fee = row.insertCell(1);
         var uk_part_time_fee = row.insertCell(2);
-        var uk_international_foundation_year = row.insertCell(3);
-        var international_full_year_fee = row.insertCell(4);
-        var international_integrated_foundation_year_fee = row.insertCell(5);
-        var placement_fee = row.insertCell(6);
-        var additional_cost = row.insertCell(7);
+        var uk_part_time_per_credit_hour = row.insertCell(3);
+        var uk_part_time_total_credit_hours = row.insertCell(4);
+        var uk_part_time_year = row.insertCell(5);
+        var uk_international_foundation_year = row.insertCell(6);
+        var international_full_year_fee = row.insertCell(7);
+        var international_integrated_foundation_year_fee = row.insertCell(8);
+        var placement_fee = row.insertCell(9);
+        var additional_cost = row.insertCell(10);
 
 
 
@@ -236,13 +250,16 @@ function FeeListng() {
         //                              data[i].uk_part_time.per_credit_hour + " ";
                                      
 
-        uk_part_time_fee.innerHTML = data[i].uk_part_time.fees;
+        uk_part_time_fee.innerHTML = data[i].uk_part_time_fee;
+        uk_part_time_year.innerHTML = data[i].uk_part_time_year;
+        uk_part_time_per_credit_hour.innerHTML = data[i].uk_part_time_per_credit_hour;
+        uk_part_time_total_credit_hours.innerHTML = data[i].uk_part_time_total_credit_hours;
                                   
 
        
 
         uk_international_foundation_year.innerHTML = data[i].uk_integrated_foundation_year;
-        international_full_year_fee.innerHTML = data[i].international_full_year_fee;
+        international_full_year_fee.innerHTML = data[i].international_full_time;
 
         international_integrated_foundation_year_fee.innerHTML = data[i].international_integrated_foundation_year;
 
@@ -268,9 +285,10 @@ function convertToTitleCase(str) {
 }
 
 function FormSubmit(event) {
+    $("body").addClass("loading");
     event.preventDefault()
 
-    // if(makeModuleList()){
+     if(makeModuleList()){
        
     if(FeeListng()){
       
@@ -286,12 +304,12 @@ function FormSubmit(event) {
     // var checkboxes = document.getElementsByName('location[]');
 
     var courseStartCheckBox = document.getElementsByName('courseStart');
-    var courseStart = [];
-    for (var i=0, n=courseStartCheckBox.length;i<n;i++) 
+    var courseStart=courseStartCheckBox[0].value;
+    for (var i=1, n=courseStartCheckBox.length;i<n;i++) 
     {
         if (courseStartCheckBox[i].checked) 
         {
-            courseStart.push(  courseStartCheckBox[i].value);
+            courseStart = courseStart + ", "+courseStartCheckBox[i].value;
         }
     }
 
@@ -323,22 +341,25 @@ function FormSubmit(event) {
         data: courseData,
         dataType: "html",
         success: function(data) {
+            console.log(data);
+            $("body").removeClass("loading");
             console.log("course added successfully");
         },
         error: function(xhr, status, error) {
+            $("body").removeClass("loading");
             console.log(error);
         },
     });
-        clearPageData();
+        //clearPageData();
     }
     else{
       showErrorMessage("Fee Information is required for adding courses")
     }
 
-    // }
-    // else{
-    //  showErrorMessage("Modules are required for adding courses")
-    // }
+    }
+    else{
+     showErrorMessage("Modules are required for adding courses")
+    }
    
 
 
