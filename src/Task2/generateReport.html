@@ -7,23 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task2</title>
     <link rel="stylesheet" href="generateReport.css" />
+    <link rel="stylesheet" href="common.css" />
 
 </head>
 
 <body>
 
     <div class="overlay"></div>
+    <div id="success-notification" class="notification">
+        <span class="message"></span>
+    </div>
 
     <h1 id="heading">Courses List</h1>
+    <div class="table-container">
 
-    <table id="courses">
+    <table class="courses">
         <thead>
             <tr>
                 <th id="checkAllCourses" style=" min-width: 50px;" onchange="selectAllCourses()"><input type="checkbox"> </th>
                 <th style=" min-width: 10px;">Id</th>
                 <th style=" min-width: 200px;">Title</th>
-                <th style=" min-width: 100px;">Levels</th>
-                <th style=" min-width: 220px;">Duration</th>
+                <th style=" min-width: 140px;">Level</th>
+                <th style=" min-width: 290px;">Duration</th>
                 <th style=" min-width: 100px;">Starting</th>
                 <th style=" min-width: 100px;">Location</th>
                 <th style=" min-width: 250px;">Overview</th>
@@ -40,6 +45,7 @@
             <!-- data will be populated here -->
         </tbody>
     </table>
+    </div>
 
     <div id="floatingButton">
         <button class="button" onclick="openModal()">Generate Report</button>
@@ -57,12 +63,19 @@
 
 
     <div id="myModal" class="modal">
-
+      
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close" onclick="spanClick()">&times;</span>
-            <canvas id="chart"></canvas>
-        </div>
+           
+                <div id="chartsContainer" >
+                    <!-- <div class="chartDesign">
+                        <canvas  id="chart"></canvas>
+                    </div> -->
+                </div>
+           
+        
+    </div>
 
     </div>
 

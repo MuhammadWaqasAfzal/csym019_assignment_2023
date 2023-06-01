@@ -10,17 +10,16 @@ document.addEventListener("DOMContentLoaded", onPageLoad); //myLoadEvent);
 
 
 function onPageLoad() {
-    //loadPage("addCourse.html");
+        // loadPage("addCourse.html");
 
     loadPage("generateReport.html");
 	onGenerateReportLoad();
-     setUserName();
+    setUserName();
 
  }
 
  function setUserName(){
-    console.log(localStorage.getItem("userName")+ " name");
-    document.getElementById("name").innerHTML = localStorage.getItem("userName");
+    document.getElementById("name").innerHTML = capitalizeFirstLetter(localStorage.getItem("userName"));
  }
  
  function loadPage(fileName) {
@@ -47,3 +46,17 @@ function onPageLoad() {
  function logout(){
     window.location.replace("login.html");
  }
+
+
+ function showMessage(message) {
+    const notification = document.getElementById('success-notification');
+    const messageSpan = notification.querySelector('.message');
+  
+    messageSpan.textContent = message;
+    notification.classList.add('show');
+  
+    setTimeout(function() {
+      notification.classList.remove('show');
+    }, 3000); // Change the timeout duration as needed (in milliseconds)
+  }
+  

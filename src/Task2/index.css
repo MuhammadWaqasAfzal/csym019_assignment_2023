@@ -4,6 +4,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
+
+}
+
+body{
+    background-color: #c2c1be;
+
 }
 
 .navbar {
@@ -191,3 +197,8 @@ input ,select{
     }
 
 }
+
+
+
+
+  

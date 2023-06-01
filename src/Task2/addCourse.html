@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="addCourse.css" />
+    <link rel="stylesheet" href="common.css" />
 
 
 </head>
@@ -10,25 +11,30 @@
 <body onload="onLoadPage()">
     <div class="overlay"></div>
 
+    <div id="success-notification" class="notification">
+        <span class="message"></span>
+    </div>
+
     <h1 id="heading">New Course Entry Form</h1>
     <form id="newCourseForm" onsubmit="FormSubmit(event)">
-        <h3>Course Title</h3>
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required placeholder="Enter Title" value="waqas" />
+        <!-- <h3>Course Title</h3> -->
+        <label for="title">ModuleTitle: </label>
+        <input class="input" type="text" id="title" name="title" required placeholder="Enter Title" value="waqas" />
 
         <br />
         <br />
 
-        <h3>Level</h3>
-        <input type="radio" class="radioInput" id="postGradute" name="level" required value="postGradute" checked style="margin-right: -4%;" />
+        <label style="display: block;"  >Level : </label>
+        <input type="radio" class="radioInput" id="postGradute" name="level" required value="Post Graduate" checked style="margin-right: -4%;" />
         <label for="postGradute"> Post Gradute</label>
-        <input type="radio" class="radioInput" id="underGradute" name="level" required value="underGradute" style="margin-right: -4%;" />
+        <br/>
+        <input type="radio" class="radioInput" id="underGradute" name="level" required value="Under Gradute" style="margin-right: -4%;" />
         <label for="underGradute"> Under Gradute</label>
 
         <br />
         <br />
 
-        <h3>Duration</h3>
+        <!-- <h3>Duration</h3> -->
         <!-- full_time -->
         <label for="full_time">Full Time Duration:</label>
         <select name=" full_time" id="full_time" required>
@@ -36,10 +42,10 @@
                 <option value="2">2 Year</option>
                 <option value="3">3 Year</option>
                 <option value="4">4 Year</option>
-            </select>
+        </select>
         <br>
         <!-- full_time_with_placement -->
-        <label for="full_time_with_placement">Full Time With Placement:</label>
+        <label for="full_time_with_placement">Full Time With Placement Duration:</label>
         <select name="full_time_with_placement" id="full_time_with_placement" required>
                 <option value="1">1 Year</option>
                 <option value="2">2 Year</option>
@@ -48,7 +54,7 @@
             </select><br>
 
         <!-- full_time_foundation -->
-        <label for="full_time_foundation">Full Time Foundation:</label>
+        <label for="full_time_foundation">Full Time With Foundation Duration:</label>
         <select name="full_time_foundation" id="full_time_foundation" required>
                 <option value="1">1 Year</option>
                 <option value="2">2 Year</option>
@@ -57,7 +63,7 @@
             </select>
         <br>
         <!-- part_time -->
-        <label for="part_time">Part Time:</label>
+        <label for="part_time">Part Time Duration:</label>
         <select name="part_time" id="part_time" required>
                 <option value="1">1 Year</option>
                 <option value="2">2 Year</option>
@@ -69,7 +75,7 @@
         <br />
 
         <!-- course start -->
-        <h3>Course Start</h3>
+        <label style="display: block;">Course Start :</label>
         <input type="checkbox" class="radioInput" id="february" name="courseStart"  value="February" checked style="margin-right: -4%;" />
         <label for="february"> February</label>
         <br />
@@ -84,25 +90,24 @@
         <br />
 
 
-        <h3>Course Location</h3>
-        <label for="location">Location:</label>
+        <!-- <h3>Course Location</h3> -->
+        <label for="location">Location :</label>
             <select name="location" id="location">
                 <option value="Waterside">Waterside</option>
-                <option value="April">April</option>
             </select>
 
         <br />
         <br />
 
-        <h3>Course Overview</h3>
-        <textarea id="overview" rows="4" required cols="50" name="overview" form="newCourseForm" placeholder="Describe course here...">SSD</textarea>
+        <label style="display: block; padding: bottom 20px;">Course Overview :</label>
+        <textarea id="overview" rows="6" required  name="overview" form="newCourseForm" placeholder="Describe course here...">SSD</textarea>
         <br />
         <br />
 
-        <h3>Modules</h3>
+        <label  style="display: block;">Modules :</label>
         <button class="button" onclick="toggleModal()" id="btn-modal" type="button">Add
                 Module</button>
-        <br />
+        <!-- <br /> -->
         <br />
         <br />
 
@@ -115,6 +120,8 @@
                     <th>Code</th>
                     <th>Status</th>
                     <th>Pre Requisites</th>
+                    <th style=" max-width: 50px; ">Actions</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -124,7 +131,7 @@
         <br />
         <br />
 
-        <h3>Fees and Funding</h3>
+        <label  style="display: block;">Fees and Funding :</label>
         <button class="button" onclick="toggleModalFee()" id="btn-modal" type="button">Add
                 Fees and Funding</button>
         <br />
@@ -140,9 +147,10 @@
                 <th>Uk Part Time Year</th>
                 <th>Uk International Foundation Year Fee</th>
                 <th>International Full Year Fee</th>
-                <th>Pre International Integrated Foundation Year Fee</th>
+                <th>International Integrated Foundation Year Fee</th>
                 <th>Placement Fee</th>
                 <th>Additional Cost</th>
+                <th style=" max-width: 150px; ">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -154,13 +162,12 @@
         <br />
         <br />
 
-
-        <h3>Enter Requirements</h3>
+        <label  style="display: block;">Enter Requirements :</label>
         <textarea id="entryRequirements" rows="4" required cols="50" name="entryRequirmentd" form="newCourseForm" placeholder="Enter entry requirements for this course here...">asda</textarea>
         <br />
         <br />
 
-        <button class="button" type="submit">Submit</button>
+        <button class="button" id="submitButton" type="submit">Submit</button>
     </form>
 
     <div id="addModuleModal" class="modal">
@@ -179,11 +186,11 @@
                         </select>
                 </div>
                 <label for="name">Name:</label>
-                <input required type="text"  id="moduleName" name="name" placeholder="Name"><br>
-                <label for="credit_hours">Credit Hours:</label>
-                <input required type="number" id="credit_hours" name="credit_hours" placeholder="Enter Credit Hours"><br>
+                <input required type="text"   value="123" id="moduleName" name="name" placeholder="Name"><br>
+                <label for="credit_hours" >Credit Hours:</label>
+                <input required type="number" value="123" id="credit_hours" name="credit_hours" placeholder="Enter Credit Hours"><br>
                 <label for="code">Code:</label>
-                <input required type="text" id="code" name="code" placeholder="Enter Code"><br>
+                <input required type="text" value="123"id="code" name="code" placeholder="Enter Code"><br>
                 <div class="select-wrapper">
                     <label for="status">Status:</label>
                     <select class="select-status" id="status">
@@ -192,7 +199,7 @@
                         </select>
                 </div>
                 <label for="pre-requisites">Pre-requisites:</label>
-                <input  type="text" id="pre_requisites" name="pre-requisites" placeholder="Pre-requisites"><br>
+                <input  type="text" id="pre_requisites" value="123" name="pre-requisites" placeholder="Pre-requisites"><br>
                 <div style="margin:auto; display:block">
 
                     <button type="submit" class="cross2 button" id="saveItem">Add</button>
@@ -201,7 +208,7 @@
         </div>
     </div>
 
-    <div id="addModuleModal" class="modalFee">
+    <div id="addFeeModal" class="modalFee">
         <div class="modal-contentFee">
             <span class="close-buttonFee" onclick="toggleModalFee()">×</span>
             <h3>Add Fee Information</h3>
@@ -226,17 +233,21 @@
                 </div> -->
                 <div id="ukFull">
                     <label for="uk_full_time">UK Full Time Fees:</label>
-                    <input type="number" id="uk_full_time" name="uk_full_time" placeholder="Enter Fee"><br>
+                    <input required type="number" id="uk_full_time" name="uk_full_time" placeholder="Enter Fee"><br>
                 </div>
+
                 <div id="UkPart" >
                     <label for="fees">Uk Part Time Fees:</label>
-                    <input type="number" id="fees" name="fees" placeholder="Enter Fees"><br>
-                    <label for="year">Part Time Years:</label>
-                    <input type="number" id="year" name="year" placeholder="Enter year"><br>
-                    <label for="credit_hours_per_hour">Total Credit Hours:</label>
-                    <input type="number" id="credit_hours_per_hour" name="credit_hours" placeholder="Enter Credit Hours"><br>
-                    <label for="per_credit_hour">Per Credit Hour Fee:</label>
-                    <input type="number" id="per_credit_hour" name="per_credit_hour" placeholder="Enter Per Credit Hour"><br>
+                    <input required type="number" id="fees" name="fees" placeholder="Enter Fees"><br>
+                    
+                    <label required for="year">Part Time Years:</label>
+                    <input required type="number" id="year" name="year" placeholder="Enter year"><br>
+                    
+                    <label required for="credit_hours_per_hour">Total Credit Hours:</label>
+                    <input required type="number" id="credit_hours_per_hour" name="credit_hours" placeholder="Enter Credit Hours"><br>
+                    
+                    <label required for="per_credit_hour">Per Credit Hour Fee:</label>
+                    <input required type="number" id="per_credit_hour" name="per_credit_hour" placeholder="Enter Per Credit Hour"><br>
                 </div>
                 
                 <label for="uk_integrated_foundation_year">UK integrated foundation year:</label>
@@ -245,14 +256,14 @@
                 <label for="international_full_time">International full time:</label>
                 <input type="number" id="international_full_time" name="international_full_time" required placeholder="International full time"><br>
                
-                <label for="international_integrated_foundation_year">International integrated foundation
-                        year:</label>
-                <input type="number" id="international_integrated_foundation_year" name="international_integrated_foundation_year"  placeholder="International integrated foundation year"><br>
+                <label for="international_integrated_foundation_year">International integrated foundation year:</label>
+                <input  required type="number" id="international_integrated_foundation_year" name="international_integrated_foundation_year"  placeholder="International integrated foundation year"><br>
+                
                 <label for="placement_fee">Placement fee:</label>
                 <input type="number" id="placement_fee" name="placement_fee" required placeholder="Placement fee"><br>
+                
                 <label for="additional_cost">Additional cost:</label>
                 <input type="number" id="additional_cost" name="additional_cost" required placeholder="Additional cost"><br>
-
 
                 <button type="submit" class="button" id="saveItem">Save</button>
             </form>

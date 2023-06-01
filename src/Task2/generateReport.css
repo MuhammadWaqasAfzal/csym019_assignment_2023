@@ -1,6 +1,5 @@
 body {
-    
-    background-color: #ffffff;
+    background-color: #c2c1be;
 }
 
 #heading{
@@ -14,37 +13,48 @@ body {
 
 
 h3 {
-    color: rgb(95, 90, 62);
+    color: #808080;
+}
+h4 {
+    color: #808080;
+    display: inline;
 }
 
-#courses {
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.courses {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
 }
 
-#courses td,
-#courses th {
-    border: 4px solid rgb(151, 149, 141);
+.courses td,
+.courses th {
+    border: 4px solid #808080;
     padding: 8px;
     vertical-align: top;
 }
 
-#courses tr:nth-child(even) {
-    background-color: #c2c1be;
+.courses tr:nth-child(even) {
+    background-color: #DCDCDC;
 }
 
-#courses tr{
+.courses tr{
     color: #000;
 }
-#courses tr:hover {
-    background-color: #4b4a44;
+.courses tr:hover {
+    background-color: #2A3749;
+    color: #FFFFFF;
 }
 
-#courses th {
+.courses th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #141615;
+    background-color: #2A3749;
     color: white;
 }
 
@@ -74,10 +84,13 @@ li {
 
   .deleteButton:hover{
     color: #020202;
-    background-color: #ff0000;
+    background-color: #c90000;
     font-size: 25px;
   }
+  
   .deleteButton {
+    border: 2px solid #c2c1be;
+
     text-align: center;
     background: #2A3749;
     color: #FFFFFF;
@@ -87,7 +100,6 @@ li {
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    border: none;
     border-radius: 5px;
     font-family: cursive;
     display: block;
@@ -97,13 +109,13 @@ li {
 }
 
 .button {
+    border: 2px solid #c2c1be;
     text-align: center;
     background: #2A3749;
     color: #FFFFFF;
     font-size: 15px;
     outline: none;
     padding: 10px;
-    border: none;
     border-radius: 5px;
     font-family: cursive;
     display: block;
@@ -155,7 +167,7 @@ li {
 /* The Close Button */
 
 .close {
-    color: #aaaaaa;
+    color: #2A3749;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -163,8 +175,9 @@ li {
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: #FFCC00;
     text-decoration: none;
+    font-size: 38px;
     cursor: pointer;
 }
 
@@ -181,6 +194,108 @@ img {
 img:hover {
     width: 100%;
     height: 100%;
+     color: #FFCC00;
 }
+
+
+
+#chartsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.chartDesign{
+    border: 1px solid #2A3749;
+    width: 30%;
+    min-width: 25rem;
+    min-height: 25rem;
+    margin: 5rem;
+}
+.barChartDesign{
+    box-sizing: border-box;
+    border: 1px solid #2A3749;
+    padding: 10px;
+    width: 90%;
+    text-align: center;
+    justify-content: space-between;
+    align-self: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    
+
+}
+
+.chartTableDesign{
+    box-sizing: border-box;
+    border: 1px solid #2A3749;
+    padding: 20px;
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    
+
+}
+
+
+.chartTableDesign td,
+.chartTableDesign th {
+    border: 2px solid #808080;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.chartTableDesign tr:nth-child(even) {
+    background-color: #DCDCDC;
+}
+
+.chartTableDesign tr{
+    color: #000;
+}
+.chartTableDesign tr:hover {
+    background-color: #2A3749;
+    color: #FFFFFF;
+}
+
+.chartTableDesign th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #2A3749;
+    color: white;
+}
+
+canvas{
+    text-align: center;
+    justify-content: space-between;
+    align-self: center;
+}
+
+
+
+.info-list {
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li:hover .info-list {
+    background-color: #FFFFFF;
+    border: 2px solid #2A3749;
+    color: #2A3749;
+    display: block;
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 5px;
+    margin-top: -10px;
+  }
 
 

@@ -82,7 +82,6 @@ function validateSignupForm() {
 
 
 function saveUserData(data){
-    console.log(data);
     localStorage.setItem('userId', data.data.Id);
     localStorage.setItem('userName', data.data.userName);
     localStorage.setItem('email', data.data.Email);
