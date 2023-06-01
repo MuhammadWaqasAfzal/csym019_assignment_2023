@@ -84,8 +84,8 @@ function validateSignupForm() {
 function saveUserData(data){
     localStorage.setItem('userId', data.data.Id);
     localStorage.setItem('userName', data.data.userName);
-    localStorage.setItem('email', data.data.Email);
-    localStorage.setItem('password', data.data.Password);
+    localStorage.setItem('email', data.data.email);
+    localStorage.setItem('password', data.data.password);
    window.location.replace("index.html");
 
 }

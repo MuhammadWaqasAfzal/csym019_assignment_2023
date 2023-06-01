@@ -1,0 +1,164 @@
+/* #FFCC00 = golden 
+#4D4D4D = text color
+#2A3749 = blue */
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+  }
+  body{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #c2c1be;
+
+    color: #2A3749;
+  }
+
+
+  .half-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40%;
+    width: 100%;
+    background-color: #FFCC00;
+    border-radius: 0px 0px 50px 50px;
+    z-index: -1;
+  }
+
+  h1{
+    color: #2A3749;
+  }
+  h3{
+    color: #2A3749;
+    display: inline;
+  }
+
+  label{
+    color: #2A3749;
+  }
+
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* set container height as full viewport height */
+  }
+  
+
+.container{
+  max-width: 450px;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-right: 20px;
+  max-height: 600px;
+  width: 100%;
+  background: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  padding: 2rem;
+  justify-content: center;
+
+}
+
+
+header{
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #2A3749;
+
+
+}
+.box input{
+  height: 50px;
+  width: 100%;
+  margin-bottom: 1.3rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  display: flex;
+  color: #2A3749;
+  font-size: 16px;
+  font-weight:600;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+ }
+
+ .box:focus{
+   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+ }
+ h5{
+  color: #2A3749;
+  font-size: 16px;
+
+  margin: 0;
+ }
+a{
+  color: #009579;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+
+  
+.button {
+  display: block;
+  align-self: center;
+  text-align: center;
+  width: 120px;
+  margin:auto;
+  margin-top: 1rem;
+  padding: 7px;
+  background: #2A3749;
+  color: #FFFFFF;
+  font-size: 25px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-family: cursive;
+
+}
+
+.buttonsDiv
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.cancelButton {
+  display: block;
+  align-self: center;
+  text-align: center;
+  width: 120px;
+  margin:auto;
+  margin-top: 1rem;
+  padding: 7px;
+  background: rgb(166, 31, 31);
+  color: #FFFFFF;
+  font-size: 25px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-family: cursive;
+
+}
+
+.button:hover{
+color: #FFCC00;
+}
+.cancelButton:hover{
+  color: #FFCC00;
+  }
