@@ -1,3 +1,9 @@
+
+body {
+    background-color: #c2c1be;
+
+}
+
 #courses {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -6,33 +12,68 @@
 
 #courses td,
 #courses th {
-    border: 4px solid rgb(151, 149, 141);
+    border: 4px solid #808080;
     padding: 8px;
     vertical-align: top;
 }
 
 #courses tr:nth-child(even) {
-    background-color: #6604042d;
+    background-color: #DCDCDC;
 }
 
 #courses tr:hover {
-    background-color: #773434;
+    background-color: #2A3749;
     color: white;
+    color: FFFFFF;
 }
 
 #courses th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #141615;
+    background-color: #2A3749;
     color: white;
 }
 
-body {
-    background-color: #eeecec;
-}
+
 
 h1 {
     text-align: center;
     color: rgb(95, 90, 62);
 }
+
+
+#heading{
+    text-align: center;
+    color: #2A3749;
+    padding: 10px;
+    font:bolder;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 48px;
+}
+
+.radio-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .radio-container input[type="radio"] {
+    display: none;
+  }
+  
+  .radio-container label {
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .radio-container input[type="radio"] + label {
+    padding: 5px 10px;
+    background-color: #EEE;
+    border-radius: 5px;
+  }
+  
+  .radio-container input[type="radio"]:checked + label {
+    background-color: #2A3749;
+    color: #FFF;
+  }
+  
