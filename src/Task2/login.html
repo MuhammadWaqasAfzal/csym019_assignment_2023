@@ -1,80 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title> Reviews </title>
-  <!---Custom CSS File--->
-  <link rel="stylesheet" href="login.css">
-  <script src="login.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-</head>
-<body>
-  <div class="half-background"></div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Reviews </title>
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-  <div class="container">
+  </head>
 
-    <input type="checkbox" id="check">
+  <body>
+    <div class="half-background"></div>
 
-    <div class="login form">
-      <header>Login</header>
-      <div id="errorMsg" ></div>
+    <div class="container">
 
-      <form onsubmit="return validateLoginForm()" method="POST">
-        <input id="logEmail" type="text" placeholder="Enter your email" required>
-        <input  id="logPassword" type="password" placeholder="Enter your password" required>
-        <!-- <a href="#">Forgot password?</a> -->
-        <input type="submit" class="button" value="Login" >
-      </form>
-      <div class="signup">
-        <span class="signup">Don't have an account?
-         <label for="check">Signup</label>
-        </span>
+      <input type="checkbox" id="check">
+
+      <div class="login form">
+        <header>Login</header>
+        <div id="errorMsg"></div>
+
+        <form onsubmit="return validateLoginForm()" method="POST">
+          <input id="logEmail" type="text" placeholder="Enter your email" required>
+          <input id="logPassword" type="password" placeholder="Enter your password" required>
+          <!-- <a href="#">Forgot password?</a> -->
+          <input type="submit" class="button" value="Login">
+        </form>
+        <div class="signup">
+          <span class="signup">Don't have an account?
+            <label for="check">Signup</label>
+          </span>
+        </div>
+      </div>
+      <div class="registration form">
+        <header>Signup</header>
+
+        <div id="errorMsgSignUp"></div>
+
+        <form onsubmit="return validateSignupForm()" method="POST">
+          <input type="text" id="signUserName" placeholder="Enter your name" required>
+          <input type="text" id="signEmail" placeholder="Enter your email" required>
+          <input type="password" id="signPassword" placeholder="Enter your password" required>
+          <input type="password" id="signConfirmPassword" placeholder="Confirm your password" required>
+
+          <div class="inlineDiv">
+            <input type="radio" id="male" name="gender" value="1" title="Male">
+            <label style="  display: inline-block;" for="male">Male</label>
+          </div>
+
+          <div class="inlineDiv">
+            <input type="radio" id="female" name="gender" value="0">
+            <label for="female">Female</label>
+          </div>
+
+          <div style="display:inline-block">
+
+
+            <label style="display:flex; align-items: center;">
+              <input style="display:inline;width:15px" type="checkbox" style="width:15px" id="isAdmin" name="admin"
+                onclick="setIsAdmin()">
+              Is Admin
+            </label>
+
+
+          </div>
+
+          <input type="submit" class="button" value="Signup">
+        </form>
+        <div class="signup">
+          <span class="signup">Already have an account?
+            <label for="check">Login</label>
+          </span>
+        </div>
       </div>
     </div>
-    <div class="registration form">
-      <header>Signup</header>
+  </body>
 
-      <div id="errorMsgSignUp"></div>
-
-      <form onsubmit="return validateSignupForm()" method="POST">
-        <input type="text" id="signFirstName" placeholder="Enter your first name" required>
-        <input type="text" id="signLastName" placeholder="Enter your last name" required>
-        <input type="text"  id="signEmail" placeholder="Enter your email" required>
-        <input type="password" id="signPassword" placeholder="Enter your password" required>
-        <input type="password"  id="signConfirmPassword" placeholder="Confirm your password" required>
-
-        <div class="inlineDiv" >
-          <input  type="radio" id="male" name="gender" value="1" title="Male">
-          <label  style="  display: inline-block;" for="male">Male</label>
-        </div>
-
-        <div class="inlineDiv" >
-        <input type="radio" id="female" name="gender" value="0">
-        <label for="female">Female</label>
-        </div>
-
-        <div style="display:inline-block">
-
-       
-        <label style="display:flex; align-items: center;">
-          <input style="display:inline;width:15px" type="checkbox" style="width:15px" id="isAdmin" name="admin" onclick="setIsAdmin()">
-          Is Admin
-        </label>
-
-        
-      </div>
-        
-        <input type="submit" class="button" value="Signup">
-      </form>
-      <div class="signup">
-        <span class="signup">Already have an account?
-         <label for="check">Login</label>
-        </span>
-      </div>
-    </div>
-  </div>
-</body>
 </html>

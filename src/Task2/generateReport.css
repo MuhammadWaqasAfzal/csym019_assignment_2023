@@ -15,9 +15,18 @@ body {
 h3 {
     color: #808080;
 }
+h3:hover {
+    color: #808080;
+}
 h4 {
     color: #808080;
     display: inline;
+    font-weight: bold;
+}
+
+h4:hover{
+    color: #FFCC00;
+    font-weight: 900;
 }
 
 

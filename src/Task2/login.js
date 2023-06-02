@@ -1,5 +1,7 @@
 
-
+/* 
+This function calls api to login user. 
+*/
 function callLoginApi(email, password) {
 
     $.ajax({
@@ -8,18 +10,19 @@ function callLoginApi(email, password) {
         data: { email: email, password: password },
         dataType: "json",
         success: function(data) {
-            saveUserData(data);
+            saveUserData(data); // on succes of api saving user data in local storage.
             return true
         },
         error: function(xhr, status, error) {
-            document.getElementById("errorMsg").innerHTML = error
+            document.getElementById("errorMsg").innerHTML = error // in caser of error displaying error to user.
             return false;
         },
     });
 }
 
-
-
+/* 
+This function calls api to signup user. 
+*/
 function callSignUpApi(userName, email, password, signConfirmPassword) {
     $.ajax({
         url: "http://localhost:3000/register.php",
@@ -27,19 +30,21 @@ function callSignUpApi(userName, email, password, signConfirmPassword) {
         data: { userName: userName, email: email, password: password, confirmPassword: signConfirmPassword },
         dataType: "json",
         success: function(data) {
-            saveUserData(data);
+            saveUserData(data); // on succes of api saving user data in local storage.
             return true
         },
         error: function(xhr, status, error) {
-            document.getElementById("errorMsg").innerHTML = error
+            document.getElementById("errorMsg").innerHTML = error  // in caser of error displaying error to user.
             return false;
         },
     });
 }
 
-
-
-
+/* 
+This function validated login form.
+Email and password cannot be empty.
+Length of password must be greater than or equal to 8.
+ */
 function validateLoginForm() {
     event.preventDefault();
     var email = document.getElementById("logEmail").value;
@@ -53,34 +58,38 @@ function validateLoginForm() {
         document.getElementById("errorMsg").innerHTML = "Your password must include atleast 8 characters"
         return false;
     } else {
-        return callLoginApi(email, password)
+        return callLoginApi(email, password) // if email and password is correct, callinf logina api.
     }
 }
 
-
+/* 
+This function validated signup form.
+Email, name and password cannot be empty.
+Length of password must be greater than or equal to 8.
+*/
 function validateSignupForm() {
     event.preventDefault();
-    var firstName = document.getElementById("signFirstName").value;
-    var lastName = document.getElementById("signLastName").value;
+    var signUserName = document.getElementById("signUserName").value;
     var email = document.getElementById("signEmail").value;
     var password = document.getElementById("signPassword").value;
     var signConfirmPassword = document.getElementById("signConfirmPassword").value;
-    var gender = document.querySelector('input[name="gender"]:checked').value;
     document.getElementById("errorMsgSignUp").style = "color:red";
 
-    if (email == "" || firstName == "" || lastName == "" || password == "") {
+    if (email == "" || signUserName == "" ||  password == "") {
         document.getElementById("errorMsgSignUp").innerHTML = "Please fill the required fields";
         return false;
     } else if (password.length < 8) {
         document.getElementById("errorMsgSignUp").innerHTML = "Your password must include atleast 8 characters";
         return false;
     } else {
-         return callSignUpApi(firstName + " " +lastName, email, password, signConfirmPassword)
+         return callSignUpApi(signUserName, email, password, signConfirmPassword)
     }
 }
 
-
-
+/* 
+This function saves user information in local Storage.
+It calls index.html page to enter into application. 
+*/
 function saveUserData(data){
     localStorage.setItem('userId', data.data.Id);
     localStorage.setItem('userName', data.data.userName);

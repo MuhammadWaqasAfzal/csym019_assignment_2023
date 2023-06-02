@@ -1,4 +1,4 @@
-//document.addEventListener("DOMContentLoaded", onPageLoad); //myLoadEvent);
+
 
 function onProfilePageLoad() {
   setTimeout(() => {
@@ -14,8 +14,7 @@ function onProfilePageLoad() {
       localStorage.getItem("password");
     document.getElementById("password").readOnly = true;
 
-    //  document.getElementById("confirmPassword").value = localStorage.getItem("password") ;
-    //  document.getElementById("confirmPassword").readOnly = true;
+   
 
     document.querySelector("#cancelBtn").style.display = "none";
     document.querySelector("#updateBtn").style.display = "none";
@@ -26,7 +25,6 @@ function onProfilePageLoad() {
 
 function showPassword() {
   var password = document.getElementById("password");
-  // var confirmPassword = document.getElementById("confirmPassword");
 
   if (password.type === "password") {
     password.type = "text";

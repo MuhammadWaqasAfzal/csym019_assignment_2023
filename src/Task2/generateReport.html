@@ -1,86 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task2</title>
-    <link rel="stylesheet" href="generateReport.css" />
-    <link rel="stylesheet" href="common.css" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task2</title>
+        <link rel="stylesheet" href="generateReport.css" />
+        <link rel="stylesheet" href="common.css" />
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <div class="overlay"></div>
-    <div id="success-notification" class="notification">
-        <span class="message"></span>
-    </div>
+        <div class="overlay"></div>
+        <div id="success-notification" class="notification">
+            <span class="message"></span>
+        </div>
 
-    <h1 id="heading">Courses List</h1>
-    <div class="table-container">
+        <h1 id="heading">Courses List</h1>
+        <div class="table-container">
 
-    <table class="courses">
-        <thead>
-            <tr>
-                <th id="checkAllCourses" style=" min-width: 50px;" onchange="selectAllCourses()"><input type="checkbox"> </th>
-                <th style=" min-width: 10px;">Id</th>
-                <th style=" min-width: 200px;">Title</th>
-                <th style=" min-width: 140px;">Level</th>
-                <th style=" min-width: 290px;">Duration</th>
-                <th style=" min-width: 100px;">Starting</th>
-                <th style=" min-width: 100px;">Location</th>
-                <th style=" min-width: 250px;">Overview</th>
-                <th style=" min-width: 350px;">Modules</th>
-                <th style=" min-width: 350px;">Fees and Funding</th>
-                <th style=" min-width: 300px;">Entry Requirements</th>
-                <th style=" min-width: 100px; ">Actions</th>
-            </tr>
+            <table class="courses">
+                <thead>
+                    <tr>
+                        <th id="checkAllCourses" style=" min-width: 50px;" onchange="selectAllCourses()"><input
+                                type="checkbox"> </th>
+                        <th style=" min-width: 10px;">Id</th>
+                        <th style=" min-width: 200px;">Title</th>
+                        <th style=" min-width: 140px;">Level</th>
+                        <th style=" min-width: 290px;">Duration</th>
+                        <th style=" min-width: 100px;">Starting</th>
+                        <th style=" min-width: 100px;">Location</th>
+                        <th style=" min-width: 250px;">Overview</th>
+                        <th style=" min-width: 350px;">Modules</th>
+                        <th style=" min-width: 350px;">Fees and Funding</th>
+                        <th style=" min-width: 300px;">Entry Requirements</th>
+                        <th style=" min-width: 100px; ">Actions</th>
+                    </tr>
 
-        </thead>
+                </thead>
 
-        <tbody id="tb">
+                <tbody id="tb">
 
-            <!-- data will be populated here -->
-        </tbody>
-    </table>
-    </div>
+                    <!-- data will be populated here -->
+                </tbody>
+            </table>
+        </div>
 
-    <div id="floatingButton">
-        <button class="button" onclick="openModal()">Generate Report</button>
-    </div>
+        <div id="floatingButton">
+            <button class="button" onclick="openModal()">Generate Report</button>
+        </div>
 
-    <div id="floatingButtonDelete">
-        <button class="deleteButton" onclick="deleteCourses()">Delete</button>
-    </div>
+        <div id="floatingButtonDelete">
+            <button class="deleteButton" onclick="deleteCourses()">Delete</button>
+        </div>
 
 
 
-    <!-- <canvas id="chart"></canvas> -->
+        <!-- <canvas id="chart"></canvas> -->
         <!-- <button class="button" id="myBtn" onclick="openModal()">Generate Report</button> -->
-   
 
 
-    <div id="myModal" class="modal">
-      
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close" onclick="spanClick()">&times;</span>
-           
-                <div id="chartsContainer" >
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" onclick="spanClick()">&times;</span>
+
+                <div id="chartsContainer">
                     <!-- <div class="chartDesign">
                         <canvas  id="chart"></canvas>
                     </div> -->
                 </div>
-           
-        
-    </div>
-
-    </div>
 
 
+            </div>
 
-</body>
+        </div>
+
+
+
+    </body>
 
 </html>
