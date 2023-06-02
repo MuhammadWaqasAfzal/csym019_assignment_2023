@@ -105,7 +105,7 @@
                                 "type": "string"
                             },
                             "courses": {
-                                "type": "array",
+                                "type": ["array","null"],
                                 "items": {
                                     "type": ["string", "null"]
                                 }
@@ -132,7 +132,7 @@
                                     "type": "number"
                                 },
                                 "uk_part_time": {
-                                    "type": "array",
+                                    "type": ["array","null"],
                                     "items": {
                                         "type": "object",
                                         "properties": {
@@ -144,22 +144,22 @@
                                                 "type": "number"
                                             },
                                             "year": {
-                                                "type": "number"
+                                                "type": ["number","null"]
                                             }
                                         },
-                                        "required": ["fees", "credit_hours", "per_credit_hour", "year"]
+                                        "required": ["fees", "credit_hours",  "year"]
                                     }
                                 },
                                 "uk_integrated_foundation_year": {
-                                    "type": "number"
+                                    "type": ["number","null"]
                                 },
                                 "international_full_time": {
-                                    "type": "number"
+                                    "type": ["number","null"]
                                 },
                                 "international_integrated_foundation_year": {
-                                    "type": "number"
+                                    "type": ["number","null"]
                                 },
-                                "placement_fee": { "type": "number" },
+                                "placement_fee": { "type": ["number","null"]},
                                 "additional_cost": {
                                     "type": "number"
                                 }
@@ -168,9 +168,7 @@
                                 "session",
                                 "uk_full_time",
                                 "uk_part_time",
-                                "uk_integrated_foundation_year",
                                 "international_full_time",
-                                "international_integrated_foundation_year",
                                 "placement_fee",
                                 "additional_cost"
                             ]

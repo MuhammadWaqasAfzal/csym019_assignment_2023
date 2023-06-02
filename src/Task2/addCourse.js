@@ -579,6 +579,8 @@ function callAddNewCourseApi(courseData) {
     success: function (data) {
       showSuccessMessage("API call successful!");
       console.log(data);
+      $("body").removeClass("loading");
+
     },
     error: function (xhr, status, error) {
       $("body").removeClass("loading");  // removing loader from screen 
@@ -600,10 +602,12 @@ function showSuccessMessage(message) {
 
   notification.classList.add("show"); // showing notification on top right cornor.
   setTimeout(function () {
-    loadPage("generateReport.html");
-    onGenerateReportLoad(); // calling generate report page to display new or upated course
+     // calling generate report page to display new or upated course
     notification.classList.remove("show"); // removing notification after 5000 milli seconds.
    
+    loadPage("generateReport.html");
+    onGenerateReportLoad();
+    
   }, 5000); // Change the timeout duration as needed (in milliseconds)
 }
 
